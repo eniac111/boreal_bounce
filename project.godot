@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Boreal Bounce"
+config/version="0.0.0"
 config/description="Boreal Bounce: a Godot 4 reimplementation of the puzzle game Frozen-Bubble."
 run/main_scene="res://src/scenes/intro/intro.tscn"
 config/use_custom_user_dir=true

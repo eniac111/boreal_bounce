@@ -764,6 +764,30 @@ LOGO_IMAGE = "gen/logo.png"  # the title on the menu, rendered instead of drawn 
 LOGO_IMAGE_SIZE = (190, 119)  # the footprint the original logo occupied on the menu
 
 
+def import_icon_sizes(assets: Path, prov: list, ai: str = "auto"):
+    """Desktop icons larger than the original 64x64, for the Flatpak and .desktop entry.
+    Uses the AI upscaler when it is available, otherwise Lanczos."""
+    src = assets / "icons" / "icon-64x64.png"
+    if not src.exists():
+        return
+    base = Image.open(src).convert("RGBA")
+    big = None
+    if ai != "off":
+        import upscale_ai
+        up = upscale_ai.Upscaler(download=(ai == "on"))
+        up.request("icons/icon-64x64.png", src)
+        up.run(log=lambda *_: None)
+        path = up.get("icons/icon-64x64.png")
+        if path is not None:
+            big = Image.open(path).convert("RGBA")  # 256x256
+    if big is None:
+        big = upscale_rgba(base, 4)
+    for size in (128, 256):
+        big.resize((size, size), Image.LANCZOS).save(assets / "icons" / f"icon-{size}x{size}.png", format="PNG")
+    prov.append(("icons/icon-64x64.png", "icons/icon-128x128.png, icon-256x256.png",
+                 "upscaled for desktop and Flatpak metadata"))
+
+
 def import_logo(assets: Path, prov: list):
     """Write the tag as a standalone image for the menu title. `import_hd` renders its own
     copy at the high-resolution factor rather than enlarging this one."""
@@ -1054,6 +1078,7 @@ def main():
     import_plain(ROOT_SHARE, ROOT_ASSETS, "snd", "snd", prov, exts={".ogg"})
     import_locale(ROOT_SHARE, ROOT_ASSETS, prov, warnings)
     import_plain(ROOT_SHARE, ROOT_ASSETS, "icons", "icons", prov, rename=lambda n: n.replace("frozen-bubble-", "").replace("frozen-bubble", "icon"))
+    import_icon_sizes(ROOT_ASSETS, prov, args.ai)
     levels_dst = ROOT_ASSETS / "levels"
     rm_dir(levels_dst)
     copy(ROOT_SHARE / "data" / "levels", levels_dst / "default-levelset.lvl", prov, "level format unchanged")

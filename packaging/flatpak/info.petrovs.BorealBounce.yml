@@ -1,0 +1,50 @@
+# Flatpak package for Boreal Bounce.
+#
+# It installs an already exported Linux build rather than running Godot itself, so build the
+# game first and then the bundle:
+#
+#   godot --headless --path . --export-release "Linux" dist/boreal_bounce.x86_64
+#   flatpak-builder --force-clean --repo=repo build \
+#       packaging/flatpak/info.petrovs.BorealBounce.yml
+#   flatpak build-bundle repo boreal-bounce.flatpak info.petrovs.BorealBounce
+#
+# The release workflow does exactly that on a v1.2.3 tag.
+app-id: info.petrovs.BorealBounce
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+command: boreal-bounce
+finish-args:
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --device=all          # GPU plus game controllers
+  - --share=network       # LAN and internet play
+modules:
+  - name: boreal-bounce
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 boreal_bounce.x86_64 /app/bin/boreal-bounce
+      - install -Dm644 info.petrovs.BorealBounce.desktop /app/share/applications/info.petrovs.BorealBounce.desktop
+      - install -Dm644 info.petrovs.BorealBounce.metainfo.xml /app/share/metainfo/info.petrovs.BorealBounce.metainfo.xml
+      - for s in 16 32 48 64 128 256; do install -Dm644 "icon-${s}x${s}.png" "/app/share/icons/hicolor/${s}x${s}/apps/info.petrovs.BorealBounce.png"; done
+    sources:
+      - type: file
+        path: ../../dist/boreal_bounce.x86_64
+      - type: file
+        path: info.petrovs.BorealBounce.desktop
+      - type: file
+        path: info.petrovs.BorealBounce.metainfo.xml
+      - type: file
+        path: ../../assets/icons/icon-16x16.png
+      - type: file
+        path: ../../assets/icons/icon-32x32.png
+      - type: file
+        path: ../../assets/icons/icon-48x48.png
+      - type: file
+        path: ../../assets/icons/icon-64x64.png
+      - type: file
+        path: ../../assets/icons/icon-128x128.png
+      - type: file
+        path: ../../assets/icons/icon-256x256.png

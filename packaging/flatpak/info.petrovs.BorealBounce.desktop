@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Boreal Bounce
+GenericName=Bubble puzzle game
+Comment=Aim, shoot and match bubbles to clear the board before it reaches the bottom
+Exec=boreal-bounce
+Icon=info.petrovs.BorealBounce
+Terminal=false
+Categories=Game;ArcadeGame;
+Keywords=puzzle;bubble;arcade;penguin;

@@ -7,3 +7,8 @@
 # AI upscale cache and downloaded Real-ESRGAN binary
 /.cache/
 /tools/esrgan/
+# Build output
+/dist/
+/repo/
+/build-flatpak/
+/.flatpak-builder/

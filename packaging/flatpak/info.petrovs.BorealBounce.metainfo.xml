@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>info.petrovs.BorealBounce</id>
+  <name>Boreal Bounce</name>
+  <summary>Match falling bubbles before they reach the bottom</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-only</project_license>
+  <developer id="info.petrovs">
+    <name>Blagovest Petrov</name>
+  </developer>
+  <description>
+    <p>
+      Boreal Bounce is a bubble puzzle game: aim the launcher, fire a bubble, and clear the
+      board by grouping three or more of a colour before the ceiling presses down on you.
+    </p>
+    <p>
+      It is a Godot 4 rewrite of Frozen-Bubble, reusing that game's artwork, music, levels and
+      translations. It offers a hundred levels, random levels, a two minute training mode,
+      two players at one keyboard, network play over a local network or the internet, replays
+      and a level editor.
+    </p>
+  </description>
+  <launchable type="desktop-id">info.petrovs.BorealBounce.desktop</launchable>
+  <url type="homepage">https://petrovs.info</url>
+  <categories>
+    <category>Game</category>
+    <category>ArcadeGame</category>
+  </categories>
+  <supports>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.0.0" date="1970-01-01"/>
+  </releases>
+</component>

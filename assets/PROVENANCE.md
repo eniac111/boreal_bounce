@@ -364,6 +364,7 @@ Do not edit files under `assets/` by hand (except `fonts/*.ttf`); re-run the scr
 | icons/frozen-bubble-icon-48x48.png | icons/icon-48x48.png |  |
 | icons/frozen-bubble-icon-64x64.png | icons/icon-64x64.png |  |
 | icons/frozen-bubble.ico | icons/icon.ico |  |
+| icons/icon-64x64.png | icons/icon-128x128.png, icon-256x256.png | upscaled for desktop and Flatpak metadata |
 | data/levels | levels/default-levelset.lvl | level format unchanged |
 
 ## Notes
