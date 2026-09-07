@@ -1,0 +1,71 @@
+name: release
+# Releases are cut by hand in the GitHub UI: create a release on master with a v1.2.3 tag and
+# publish it. That fires this workflow, which builds the deliverables and uploads them to that
+# release as assets. (Tags created through the UI raise no push event, so this listens for the
+# release itself.) The version comes from the tag, and the release notes stay yours.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag to build again, for example v1.2.3
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+      version: ${{ steps.tag.outputs.version }}
+    steps:
+      - id: tag
+        run: |
+          tag="${{ github.event.release.tag_name || inputs.tag }}"
+          if ! echo "$tag" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::release tag '$tag' is not of the form v1.2.3"
+            exit 1
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "version=${tag#v}" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.tag.outputs.tag }}
+          fetch-depth: 0
+      - name: Refuse a tag that is not on master
+        run: |
+          git fetch --no-tags origin +refs/heads/master:refs/remotes/origin/master
+          if ! git merge-base --is-ancestor HEAD refs/remotes/origin/master; then
+            echo "::error::${{ steps.tag.outputs.tag }} points at a commit that is not on master"
+            exit 1
+          fi
+
+  build:
+    needs: check
+    uses: ./.github/workflows/build.yml
+    with:
+      ref: ${{ needs.check.outputs.tag }}
+      version: ${{ needs.check.outputs.version }}
+      retention-days: 90
+
+  upload:
+    needs: [check, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-files
+          path: release
+      - uses: actions/download-artifact@v4
+        with:
+          name: flatpak-bundle
+          path: release
+      - name: Checksums over everything that ships
+        run: cd release && sha256sum * > SHA256SUMS
+      - name: Attach the deliverables to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ needs.check.outputs.tag }}" release/* --clobber --repo "$GITHUB_REPOSITORY"

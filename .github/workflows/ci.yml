@@ -1,0 +1,15 @@
+name: ci
+# Every push and pull request builds the full set of deliverables and keeps them as run
+# artifacts for a couple of weeks. Nothing is published; releases are cut by hand and handled
+# by release.yml.
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      version: 0.0.0
+      retention-days: 14

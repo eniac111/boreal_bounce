@@ -1,0 +1,102 @@
+name: build
+# The shared build. `ci.yml` calls it on every push and pull request and keeps the results as
+# run artifacts; `release.yml` calls it when a release is published and then uploads the same
+# files to that release. Nothing here publishes anything.
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: Commit, branch or tag to build. Defaults to the commit that triggered the run.
+        type: string
+        default: ""
+      version:
+        description: Version stamped into the binaries and the AppStream data.
+        type: string
+        default: 0.0.0
+      retention-days:
+        description: How long to keep the run artifacts.
+        type: number
+        default: 14
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+      - uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.1
+          use-dotnet: false
+          include-templates: true
+      - name: Stamp the version
+        run: python3 tools/set_version.py "${{ inputs.version }}"
+      - name: Import project
+        run: godot --headless --path . --import
+      - name: Run tests
+        run: ./tools/test.sh
+      - name: Export every target
+        run: |
+          mkdir -p dist/web
+          godot --headless --path . --export-release "Linux" dist/boreal_bounce.x86_64
+          godot --headless --path . --export-release "Linux dedicated server" dist/boreal_bounce_server.x86_64
+          godot --headless --path . --export-release "Windows" dist/boreal_bounce.exe
+          godot --headless --path . --export-release "Web" dist/web/index.html
+      - name: Package the downloads
+        run: |
+          v="${{ inputs.version }}"
+          mkdir -p release
+          install -m644 COPYING CREDITS.md dist/
+          tar -C dist -czf "release/boreal-bounce-$v-linux-x86_64.tar.gz" boreal_bounce.x86_64 COPYING CREDITS.md
+          tar -C dist -czf "release/boreal-bounce-$v-dedicated-server-x86_64.tar.gz" boreal_bounce_server.x86_64 COPYING CREDITS.md
+          (cd dist && zip -q "../release/boreal-bounce-$v-windows-x86_64.zip" boreal_bounce.exe COPYING CREDITS.md)
+          (cd dist/web && zip -qr "../../release/boreal-bounce-$v-web.zip" .)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-files
+          path: release/
+          retention-days: ${{ inputs.retention-days }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-export
+          path: dist/boreal_bounce.x86_64
+          retention-days: ${{ inputs.retention-days }}
+      - name: Hand the stamped metadata to the Flatpak job
+        uses: actions/upload-artifact@v4
+        with:
+          name: packaging-stamped
+          path: packaging/
+          retention-days: ${{ inputs.retention-days }}
+
+  flatpak:
+    needs: export
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:freedesktop-24.08
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: linux-export
+          path: dist
+      - uses: actions/download-artifact@v4
+        with:
+          name: packaging-stamped
+          path: packaging
+      - name: The exported binary must stay executable
+        run: chmod +x dist/boreal_bounce.x86_64
+      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+        with:
+          bundle: boreal-bounce-${{ inputs.version }}-x86_64.flatpak
+          manifest-path: packaging/flatpak/info.petrovs.BorealBounce.yml
+          cache-key: flatpak-builder-${{ github.sha }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: flatpak-bundle
+          path: boreal-bounce-${{ inputs.version }}-x86_64.flatpak
+          if-no-files-found: error
+          retention-days: ${{ inputs.retention-days }}
