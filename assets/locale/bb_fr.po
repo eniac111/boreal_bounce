@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Partie à 1 joueur"
+
+msgid "Start 2 players game"
+msgstr "Partie à 2 joueurs"
+
+msgid "Start LAN game"
+msgstr "Partie en réseau local"
+
+msgid "Start Internet game"
+msgstr "Partie sur Internet"
+
+msgid "Level editor"
+msgstr "Éditeur de niveaux"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Change keys"
+msgstr "Changer les touches"
+
+msgid "High scores"
+msgstr "Meilleurs scores"
+
+msgid "Play default levelset"
+msgstr "Jouer les niveaux par défaut"
+
+msgid "Pick levelset and start level"
+msgstr "Choisir les niveaux et le départ"
+
+msgid "Play random levels"
+msgstr "Niveaux aléatoires"
+
+msgid "Winner!"
+msgstr "Gagné !"
+
+msgid "Loser!"
+msgstr "Perdu !"
+
+msgid "%s wins!"
+msgstr "%s gagne !"
+
+msgid "High scores: levels"
+msgstr "Meilleurs scores : niveaux"
+
+msgid "High scores: multiplayer training"
+msgstr "Meilleurs scores : entraînement"
+
+msgid "Choose bubble"
+msgstr "Choisir la bulle"
+
+msgid "Navigation"
+msgstr "Navigation"
+
+msgid "Levelset"
+msgstr "Jeu de niveaux"
+
+msgid "Level"
+msgstr "Niveau"
+
+msgid "Prev"
+msgstr "Précédent"
+
+msgid "Next"
+msgstr "Suivant"
+
+msgid "First"
+msgstr "Premier"
+
+msgid "Last"
+msgstr "Dernier"
+
+msgid "New"
+msgstr "Nouveau"
+
+msgid "Open"
+msgstr "Ouvrir"
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Insert"
+msgstr "Insérer"
+
+msgid "Append"
+msgstr "Ajouter"
+
+msgid "Help!"
+msgstr "Aide !"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Start level:"
+msgstr "Niveau de départ :"
+
+msgid "Select levelset to play"
+msgstr "Choisir les niveaux à jouer"
+
+msgid "Select levelset to open"
+msgstr "Choisir les niveaux à ouvrir"
+
+msgid "Save changes?"
+msgstr "Enregistrer les changements ?"
+
+msgid "Help: key shortcuts"
+msgstr "Aide : raccourcis clavier"
+
+msgid "LAN game"
+msgstr "Partie en réseau local"
+
+msgid "Internet game"
+msgstr "Partie sur Internet"
+
+msgid "Players:"
+msgstr "Joueurs :"
+
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+msgid "Music"
+msgstr "Musique"
+
+msgid "Sound effects"
+msgstr "Effets sonores"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Back"
+msgstr "Retour"
+
+msgid "on"
+msgstr "oui"
+
+msgid "off"
+msgstr "non"
+
+msgid "Not available yet"
+msgstr "Pas encore disponible"
+
+msgid "Press any key"
+msgstr "Appuyez sur une touche"
+

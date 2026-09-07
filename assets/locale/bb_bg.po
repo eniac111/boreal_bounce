@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Игра за един играч"
+
+msgid "Start 2 players game"
+msgstr "Игра за двама"
+
+msgid "Start LAN game"
+msgstr "Игра в локална мрежа"
+
+msgid "Start Internet game"
+msgstr "Игра по интернет"
+
+msgid "Level editor"
+msgstr "Редактор на нива"
+
+msgid "Options"
+msgstr "Настройки"
+
+msgid "Change keys"
+msgstr "Смяна на клавишите"
+
+msgid "High scores"
+msgstr "Рекорди"
+
+msgid "Play default levelset"
+msgstr "Стандартни нива"
+
+msgid "Pick levelset and start level"
+msgstr "Избор на нива и начално ниво"
+
+msgid "Play random levels"
+msgstr "Случайни нива"
+
+msgid "Winner!"
+msgstr "Победител!"
+
+msgid "Loser!"
+msgstr "Загуба!"
+
+msgid "%s wins!"
+msgstr "%s печели!"
+
+msgid "High scores: levels"
+msgstr "Рекорди: нива"
+
+msgid "High scores: multiplayer training"
+msgstr "Рекорди: тренировка"
+
+msgid "Choose bubble"
+msgstr "Избери балон"
+
+msgid "Navigation"
+msgstr "Навигация"
+
+msgid "Levelset"
+msgstr "Набор нива"
+
+msgid "Level"
+msgstr "Ниво"
+
+msgid "Prev"
+msgstr "Предишно"
+
+msgid "Next"
+msgstr "Следващо"
+
+msgid "First"
+msgstr "Първо"
+
+msgid "Last"
+msgstr "Последно"
+
+msgid "New"
+msgstr "Нов"
+
+msgid "Open"
+msgstr "Отвори"
+
+msgid "Save"
+msgstr "Запази"
+
+msgid "Delete"
+msgstr "Изтрий"
+
+msgid "Insert"
+msgstr "Вмъкни"
+
+msgid "Append"
+msgstr "Добави"
+
+msgid "Help!"
+msgstr "Помощ!"
+
+msgid "OK"
+msgstr "Добре"
+
+msgid "Cancel"
+msgstr "Отказ"
+
+msgid "Start level:"
+msgstr "Начално ниво:"
+
+msgid "Select levelset to play"
+msgstr "Избери нива за игра"
+
+msgid "Select levelset to open"
+msgstr "Избери нива за отваряне"
+
+msgid "Save changes?"
+msgstr "Запазване на промените?"
+
+msgid "Help: key shortcuts"
+msgstr "Помощ: клавиши"
+
+msgid "LAN game"
+msgstr "Игра в локална мрежа"
+
+msgid "Internet game"
+msgstr "Игра по интернет"
+
+msgid "Players:"
+msgstr "Играчи:"
+
+msgid "Fullscreen"
+msgstr "Цял екран"
+
+msgid "Music"
+msgstr "Музика"
+
+msgid "Sound effects"
+msgstr "Звукови ефекти"
+
+msgid "Volume"
+msgstr "Сила на звука"
+
+msgid "Language"
+msgstr "Език"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "on"
+msgstr "вкл."
+
+msgid "off"
+msgstr "изкл."
+
+msgid "Not available yet"
+msgstr "Все още не е налично"
+
+msgid "Press any key"
+msgstr "Натиснете клавиш"
+

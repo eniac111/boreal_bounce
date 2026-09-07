@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Begin 1-speler-spel"
+
+msgid "Start 2 players game"
+msgstr "Begin 2-speler-spel"
+
+msgid "Start LAN game"
+msgstr "Begin LAN-spel"
+
+msgid "Start Internet game"
+msgstr "Begin internetspel"
+
+msgid "Level editor"
+msgstr "Vlakredigeerder"
+
+msgid "Options"
+msgstr "Opsies"
+
+msgid "Change keys"
+msgstr "Verander sleutels"
+
+msgid "High scores"
+msgstr "Topstande"
+
+msgid "Play default levelset"
+msgstr "Speel standaardvlakke"
+
+msgid "Pick levelset and start level"
+msgstr "Kies vlakke en beginvlak"
+
+msgid "Play random levels"
+msgstr "Speel lukrake vlakke"
+
+msgid "Winner!"
+msgstr "Wenner!"
+
+msgid "Loser!"
+msgstr "Verloorder!"
+
+msgid "%s wins!"
+msgstr "%s wen!"
+
+msgid "High scores: levels"
+msgstr "Topstande: vlakke"
+
+msgid "High scores: multiplayer training"
+msgstr "Topstande: multispeler-oefening"
+
+msgid "Choose bubble"
+msgstr "Kies borrel"
+
+msgid "Navigation"
+msgstr "Navigasie"
+
+msgid "Levelset"
+msgstr "Vlakstel"
+
+msgid "Level"
+msgstr "Vlak"
+
+msgid "Prev"
+msgstr "Vorige"
+
+msgid "Next"
+msgstr "Volgende"
+
+msgid "First"
+msgstr "Eerste"
+
+msgid "Last"
+msgstr "Laaste"
+
+msgid "New"
+msgstr "Nuwe"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Save"
+msgstr "Stoor"
+
+msgid "Delete"
+msgstr "Skrap"
+
+msgid "Insert"
+msgstr "Voeg in"
+
+msgid "Append"
+msgstr "Voeg by"
+
+msgid "Help!"
+msgstr "Help!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Kanselleer"
+
+msgid "Start level:"
+msgstr "Beginvlak:"
+
+msgid "Select levelset to play"
+msgstr "Kies vlakke om te speel"
+
+msgid "Select levelset to open"
+msgstr "Kies vlakke om te open"
+
+msgid "Save changes?"
+msgstr "Stoor veranderinge?"
+
+msgid "Help: key shortcuts"
+msgstr "Help: sleutels"
+
+msgid "LAN game"
+msgstr "LAN-spel"
+
+msgid "Internet game"
+msgstr "Internetspel"
+
+msgid "Players:"
+msgstr "Spelers:"
+
+msgid "Fullscreen"
+msgstr "Volskerm"
+
+msgid "Music"
+msgstr "Musiek"
+
+msgid "Sound effects"
+msgstr "Klankeffekte"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "Back"
+msgstr "Terug"
+
+msgid "on"
+msgstr "aan"
+
+msgid "off"
+msgstr "af"
+
+msgid "Not available yet"
+msgstr "Nog nie beskikbaar nie"
+
+msgid "Press any key"
+msgstr "Druk enige sleutel"
+

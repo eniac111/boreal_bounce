@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Spel för 1 spelare"
+
+msgid "Start 2 players game"
+msgstr "Spel för 2 spelare"
+
+msgid "Start LAN game"
+msgstr "LAN-spel"
+
+msgid "Start Internet game"
+msgstr "Internetspel"
+
+msgid "Level editor"
+msgstr "Banredigerare"
+
+msgid "Options"
+msgstr "Alternativ"
+
+msgid "Change keys"
+msgstr "Ändra tangenter"
+
+msgid "High scores"
+msgstr "Rekord"
+
+msgid "Play default levelset"
+msgstr "Spela standardbanorna"
+
+msgid "Pick levelset and start level"
+msgstr "Välj banor och startbana"
+
+msgid "Play random levels"
+msgstr "Slumpmässiga banor"
+
+msgid "Winner!"
+msgstr "Vinnare!"
+
+msgid "Loser!"
+msgstr "Förlorare!"
+
+msgid "%s wins!"
+msgstr "%s vinner!"
+
+msgid "High scores: levels"
+msgstr "Rekord: banor"
+
+msgid "High scores: multiplayer training"
+msgstr "Rekord: träning"
+
+msgid "Choose bubble"
+msgstr "Välj bubbla"
+
+msgid "Navigation"
+msgstr "Navigering"
+
+msgid "Levelset"
+msgstr "Banuppsättning"
+
+msgid "Level"
+msgstr "Bana"
+
+msgid "Prev"
+msgstr "Föregående"
+
+msgid "Next"
+msgstr "Nästa"
+
+msgid "First"
+msgstr "Första"
+
+msgid "Last"
+msgstr "Sista"
+
+msgid "New"
+msgstr "Ny"
+
+msgid "Open"
+msgstr "Öppna"
+
+msgid "Save"
+msgstr "Spara"
+
+msgid "Delete"
+msgstr "Ta bort"
+
+msgid "Insert"
+msgstr "Infoga"
+
+msgid "Append"
+msgstr "Lägg till"
+
+msgid "Help!"
+msgstr "Hjälp!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Start level:"
+msgstr "Startbana:"
+
+msgid "Select levelset to play"
+msgstr "Välj banor att spela"
+
+msgid "Select levelset to open"
+msgstr "Välj banor att öppna"
+
+msgid "Save changes?"
+msgstr "Spara ändringar?"
+
+msgid "Help: key shortcuts"
+msgstr "Hjälp: tangenter"
+
+msgid "LAN game"
+msgstr "LAN-spel"
+
+msgid "Internet game"
+msgstr "Internetspel"
+
+msgid "Players:"
+msgstr "Spelare:"
+
+msgid "Fullscreen"
+msgstr "Helskärm"
+
+msgid "Music"
+msgstr "Musik"
+
+msgid "Sound effects"
+msgstr "Ljudeffekter"
+
+msgid "Volume"
+msgstr "Volym"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Back"
+msgstr "Tillbaka"
+
+msgid "on"
+msgstr "på"
+
+msgid "off"
+msgstr "av"
+
+msgid "Not available yet"
+msgstr "Inte tillgängligt ännu"
+
+msgid "Press any key"
+msgstr "Tryck på en tangent"
+

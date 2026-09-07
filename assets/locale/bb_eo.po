@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Ludo por 1 ludanto"
+
+msgid "Start 2 players game"
+msgstr "Ludo por 2 ludantoj"
+
+msgid "Start LAN game"
+msgstr "Ludo en loka reto"
+
+msgid "Start Internet game"
+msgstr "Ludo per Interreto"
+
+msgid "Level editor"
+msgstr "Nivelredaktilo"
+
+msgid "Options"
+msgstr "Agordoj"
+
+msgid "Change keys"
+msgstr "Ŝanĝi klavojn"
+
+msgid "High scores"
+msgstr "Plej altaj poentoj"
+
+msgid "Play default levelset"
+msgstr "Ludi la defaŭltajn nivelojn"
+
+msgid "Pick levelset and start level"
+msgstr "Elekti nivelojn kaj komencan nivelon"
+
+msgid "Play random levels"
+msgstr "Hazardaj niveloj"
+
+msgid "Winner!"
+msgstr "Venkinto!"
+
+msgid "Loser!"
+msgstr "Malvenko!"
+
+msgid "%s wins!"
+msgstr "%s venkas!"
+
+msgid "High scores: levels"
+msgstr "Poentoj: niveloj"
+
+msgid "High scores: multiplayer training"
+msgstr "Poentoj: trejnado"
+
+msgid "Choose bubble"
+msgstr "Elekti vezikon"
+
+msgid "Navigation"
+msgstr "Navigado"
+
+msgid "Levelset"
+msgstr "Nivelaro"
+
+msgid "Level"
+msgstr "Nivelo"
+
+msgid "Prev"
+msgstr "Antaŭa"
+
+msgid "Next"
+msgstr "Sekva"
+
+msgid "First"
+msgstr "Unua"
+
+msgid "Last"
+msgstr "Lasta"
+
+msgid "New"
+msgstr "Nova"
+
+msgid "Open"
+msgstr "Malfermi"
+
+msgid "Save"
+msgstr "Konservi"
+
+msgid "Delete"
+msgstr "Forigi"
+
+msgid "Insert"
+msgstr "Enmeti"
+
+msgid "Append"
+msgstr "Aldoni"
+
+msgid "Help!"
+msgstr "Helpo!"
+
+msgid "OK"
+msgstr "Bone"
+
+msgid "Cancel"
+msgstr "Nuligi"
+
+msgid "Start level:"
+msgstr "Komenca nivelo:"
+
+msgid "Select levelset to play"
+msgstr "Elekti nivelojn por ludi"
+
+msgid "Select levelset to open"
+msgstr "Elekti nivelojn por malfermi"
+
+msgid "Save changes?"
+msgstr "Konservi ŝanĝojn?"
+
+msgid "Help: key shortcuts"
+msgstr "Helpo: klavoj"
+
+msgid "LAN game"
+msgstr "LAN-ludo"
+
+msgid "Internet game"
+msgstr "Interreta ludo"
+
+msgid "Players:"
+msgstr "Ludantoj:"
+
+msgid "Fullscreen"
+msgstr "Plenekrane"
+
+msgid "Music"
+msgstr "Muziko"
+
+msgid "Sound effects"
+msgstr "Sonefektoj"
+
+msgid "Volume"
+msgstr "Laŭteco"
+
+msgid "Language"
+msgstr "Lingvo"
+
+msgid "Back"
+msgstr "Reen"
+
+msgid "on"
+msgstr "ŝaltita"
+
+msgid "off"
+msgstr "malŝaltita"
+
+msgid "Not available yet"
+msgstr "Ankoraŭ ne disponebla"
+
+msgid "Press any key"
+msgstr "Premu klavon"
+

@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Joc pentru 1 jucător"
+
+msgid "Start 2 players game"
+msgstr "Joc pentru 2 jucători"
+
+msgid "Start LAN game"
+msgstr "Joc în rețea locală"
+
+msgid "Start Internet game"
+msgstr "Joc pe Internet"
+
+msgid "Level editor"
+msgstr "Editor de niveluri"
+
+msgid "Options"
+msgstr "Opțiuni"
+
+msgid "Change keys"
+msgstr "Schimbă tastele"
+
+msgid "High scores"
+msgstr "Scoruri maxime"
+
+msgid "Play default levelset"
+msgstr "Joacă nivelurile implicite"
+
+msgid "Pick levelset and start level"
+msgstr "Alege nivelurile și startul"
+
+msgid "Play random levels"
+msgstr "Niveluri aleatorii"
+
+msgid "Winner!"
+msgstr "Câștigător!"
+
+msgid "Loser!"
+msgstr "Ai pierdut!"
+
+msgid "%s wins!"
+msgstr "%s câștigă!"
+
+msgid "High scores: levels"
+msgstr "Scoruri: niveluri"
+
+msgid "High scores: multiplayer training"
+msgstr "Scoruri: antrenament"
+
+msgid "Choose bubble"
+msgstr "Alege bula"
+
+msgid "Navigation"
+msgstr "Navigare"
+
+msgid "Levelset"
+msgstr "Set de niveluri"
+
+msgid "Level"
+msgstr "Nivel"
+
+msgid "Prev"
+msgstr "Anterior"
+
+msgid "Next"
+msgstr "Următor"
+
+msgid "First"
+msgstr "Primul"
+
+msgid "Last"
+msgstr "Ultimul"
+
+msgid "New"
+msgstr "Nou"
+
+msgid "Open"
+msgstr "Deschide"
+
+msgid "Save"
+msgstr "Salvează"
+
+msgid "Delete"
+msgstr "Șterge"
+
+msgid "Insert"
+msgstr "Inserează"
+
+msgid "Append"
+msgstr "Adaugă"
+
+msgid "Help!"
+msgstr "Ajutor!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Anulează"
+
+msgid "Start level:"
+msgstr "Nivel de start:"
+
+msgid "Select levelset to play"
+msgstr "Alege nivelurile de jucat"
+
+msgid "Select levelset to open"
+msgstr "Alege nivelurile de deschis"
+
+msgid "Save changes?"
+msgstr "Salvezi modificările?"
+
+msgid "Help: key shortcuts"
+msgstr "Ajutor: taste"
+
+msgid "LAN game"
+msgstr "Joc LAN"
+
+msgid "Internet game"
+msgstr "Joc pe Internet"
+
+msgid "Players:"
+msgstr "Jucători:"
+
+msgid "Fullscreen"
+msgstr "Ecran complet"
+
+msgid "Music"
+msgstr "Muzică"
+
+msgid "Sound effects"
+msgstr "Efecte sonore"
+
+msgid "Volume"
+msgstr "Volum"
+
+msgid "Language"
+msgstr "Limbă"
+
+msgid "Back"
+msgstr "Înapoi"
+
+msgid "on"
+msgstr "pornit"
+
+msgid "off"
+msgstr "oprit"
+
+msgid "Not available yet"
+msgstr "Încă nu este disponibil"
+
+msgid "Press any key"
+msgstr "Apasă o tastă"
+

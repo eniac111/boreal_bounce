@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Tek oyunculu oyun"
+
+msgid "Start 2 players game"
+msgstr "İki oyunculu oyun"
+
+msgid "Start LAN game"
+msgstr "Yerel ağ oyunu"
+
+msgid "Start Internet game"
+msgstr "İnternet oyunu"
+
+msgid "Level editor"
+msgstr "Seviye düzenleyici"
+
+msgid "Options"
+msgstr "Seçenekler"
+
+msgid "Change keys"
+msgstr "Tuşları değiştir"
+
+msgid "High scores"
+msgstr "Yüksek skorlar"
+
+msgid "Play default levelset"
+msgstr "Varsayılan seviyeleri oyna"
+
+msgid "Pick levelset and start level"
+msgstr "Seviye ve başlangıç seç"
+
+msgid "Play random levels"
+msgstr "Rastgele seviyeler"
+
+msgid "Winner!"
+msgstr "Kazandın!"
+
+msgid "Loser!"
+msgstr "Kaybettin!"
+
+msgid "%s wins!"
+msgstr "%s kazandı!"
+
+msgid "High scores: levels"
+msgstr "Yüksek skorlar: seviyeler"
+
+msgid "High scores: multiplayer training"
+msgstr "Yüksek skorlar: antrenman"
+
+msgid "Choose bubble"
+msgstr "Balon seç"
+
+msgid "Navigation"
+msgstr "Gezinme"
+
+msgid "Levelset"
+msgstr "Seviye seti"
+
+msgid "Level"
+msgstr "Seviye"
+
+msgid "Prev"
+msgstr "Önceki"
+
+msgid "Next"
+msgstr "Sonraki"
+
+msgid "First"
+msgstr "İlk"
+
+msgid "Last"
+msgstr "Son"
+
+msgid "New"
+msgstr "Yeni"
+
+msgid "Open"
+msgstr "Aç"
+
+msgid "Save"
+msgstr "Kaydet"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Insert"
+msgstr "Ekle"
+
+msgid "Append"
+msgstr "Sona ekle"
+
+msgid "Help!"
+msgstr "Yardım!"
+
+msgid "OK"
+msgstr "Tamam"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Start level:"
+msgstr "Başlangıç seviyesi:"
+
+msgid "Select levelset to play"
+msgstr "Oynanacak seviyeleri seç"
+
+msgid "Select levelset to open"
+msgstr "Açılacak seviyeleri seç"
+
+msgid "Save changes?"
+msgstr "Değişiklikler kaydedilsin mi?"
+
+msgid "Help: key shortcuts"
+msgstr "Yardım: kısayollar"
+
+msgid "LAN game"
+msgstr "Yerel ağ oyunu"
+
+msgid "Internet game"
+msgstr "İnternet oyunu"
+
+msgid "Players:"
+msgstr "Oyuncular:"
+
+msgid "Fullscreen"
+msgstr "Tam ekran"
+
+msgid "Music"
+msgstr "Müzik"
+
+msgid "Sound effects"
+msgstr "Ses efektleri"
+
+msgid "Volume"
+msgstr "Ses düzeyi"
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "Back"
+msgstr "Geri"
+
+msgid "on"
+msgstr "açık"
+
+msgid "off"
+msgstr "kapalı"
+
+msgid "Not available yet"
+msgstr "Henüz mevcut değil"
+
+msgid "Press any key"
+msgstr "Bir tuşa basın"
+

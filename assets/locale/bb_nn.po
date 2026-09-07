@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Spel for 1 spelar"
+
+msgid "Start 2 players game"
+msgstr "Spel for 2 spelarar"
+
+msgid "Start LAN game"
+msgstr "LAN-spel"
+
+msgid "Start Internet game"
+msgstr "Internett-spel"
+
+msgid "Level editor"
+msgstr "Brettredigering"
+
+msgid "Options"
+msgstr "Innstillingar"
+
+msgid "Change keys"
+msgstr "Endre tastar"
+
+msgid "High scores"
+msgstr "Toppliste"
+
+msgid "Play default levelset"
+msgstr "Spel standardbretta"
+
+msgid "Pick levelset and start level"
+msgstr "Vel brett og startbrett"
+
+msgid "Play random levels"
+msgstr "Tilfeldige brett"
+
+msgid "Winner!"
+msgstr "Vinnar!"
+
+msgid "Loser!"
+msgstr "Tapar!"
+
+msgid "%s wins!"
+msgstr "%s vinn!"
+
+msgid "High scores: levels"
+msgstr "Toppliste: brett"
+
+msgid "High scores: multiplayer training"
+msgstr "Toppliste: trening"
+
+msgid "Choose bubble"
+msgstr "Vel boble"
+
+msgid "Navigation"
+msgstr "Navigasjon"
+
+msgid "Levelset"
+msgstr "Brettsett"
+
+msgid "Level"
+msgstr "Brett"
+
+msgid "Prev"
+msgstr "Førre"
+
+msgid "Next"
+msgstr "Neste"
+
+msgid "First"
+msgstr "Første"
+
+msgid "Last"
+msgstr "Siste"
+
+msgid "New"
+msgstr "Ny"
+
+msgid "Open"
+msgstr "Opne"
+
+msgid "Save"
+msgstr "Lagre"
+
+msgid "Delete"
+msgstr "Slett"
+
+msgid "Insert"
+msgstr "Set inn"
+
+msgid "Append"
+msgstr "Legg til"
+
+msgid "Help!"
+msgstr "Hjelp!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Start level:"
+msgstr "Startbrett:"
+
+msgid "Select levelset to play"
+msgstr "Vel brett å spele"
+
+msgid "Select levelset to open"
+msgstr "Vel brett å opne"
+
+msgid "Save changes?"
+msgstr "Lagre endringar?"
+
+msgid "Help: key shortcuts"
+msgstr "Hjelp: tastar"
+
+msgid "LAN game"
+msgstr "LAN-spel"
+
+msgid "Internet game"
+msgstr "Internett-spel"
+
+msgid "Players:"
+msgstr "Spelarar:"
+
+msgid "Fullscreen"
+msgstr "Fullskjerm"
+
+msgid "Music"
+msgstr "Musikk"
+
+msgid "Sound effects"
+msgstr "Lydeffektar"
+
+msgid "Volume"
+msgstr "Volum"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Back"
+msgstr "Tilbake"
+
+msgid "on"
+msgstr "på"
+
+msgid "off"
+msgstr "av"
+
+msgid "Not available yet"
+msgstr "Ikkje tilgjengeleg enno"
+
+msgid "Press any key"
+msgstr "Trykk ein tast"
+

@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Παιχνίδι ενός παίκτη"
+
+msgid "Start 2 players game"
+msgstr "Παιχνίδι δύο παικτών"
+
+msgid "Start LAN game"
+msgstr "Παιχνίδι τοπικού δικτύου"
+
+msgid "Start Internet game"
+msgstr "Παιχνίδι μέσω Internet"
+
+msgid "Level editor"
+msgstr "Επεξεργαστής επιπέδων"
+
+msgid "Options"
+msgstr "Επιλογές"
+
+msgid "Change keys"
+msgstr "Αλλαγή πλήκτρων"
+
+msgid "High scores"
+msgstr "Υψηλές βαθμολογίες"
+
+msgid "Play default levelset"
+msgstr "Προεπιλεγμένα επίπεδα"
+
+msgid "Pick levelset and start level"
+msgstr "Επιλογή επιπέδων και αρχής"
+
+msgid "Play random levels"
+msgstr "Τυχαία επίπεδα"
+
+msgid "Winner!"
+msgstr "Νικητής!"
+
+msgid "Loser!"
+msgstr "Ήττα!"
+
+msgid "%s wins!"
+msgstr "Νίκη για %s!"
+
+msgid "High scores: levels"
+msgstr "Βαθμολογίες: επίπεδα"
+
+msgid "High scores: multiplayer training"
+msgstr "Βαθμολογίες: εξάσκηση"
+
+msgid "Choose bubble"
+msgstr "Επιλογή φούσκας"
+
+msgid "Navigation"
+msgstr "Πλοήγηση"
+
+msgid "Levelset"
+msgstr "Σύνολο επιπέδων"
+
+msgid "Level"
+msgstr "Επίπεδο"
+
+msgid "Prev"
+msgstr "Προηγ."
+
+msgid "Next"
+msgstr "Επόμενο"
+
+msgid "First"
+msgstr "Πρώτο"
+
+msgid "Last"
+msgstr "Τελευταίο"
+
+msgid "New"
+msgstr "Νέο"
+
+msgid "Open"
+msgstr "Άνοιγμα"
+
+msgid "Save"
+msgstr "Αποθήκευση"
+
+msgid "Delete"
+msgstr "Διαγραφή"
+
+msgid "Insert"
+msgstr "Εισαγωγή"
+
+msgid "Append"
+msgstr "Προσθήκη"
+
+msgid "Help!"
+msgstr "Βοήθεια!"
+
+msgid "OK"
+msgstr "ΟΚ"
+
+msgid "Cancel"
+msgstr "Άκυρο"
+
+msgid "Start level:"
+msgstr "Αρχικό επίπεδο:"
+
+msgid "Select levelset to play"
+msgstr "Επιλογή επιπέδων για παιχνίδι"
+
+msgid "Select levelset to open"
+msgstr "Επιλογή επιπέδων για άνοιγμα"
+
+msgid "Save changes?"
+msgstr "Αποθήκευση αλλαγών;"
+
+msgid "Help: key shortcuts"
+msgstr "Βοήθεια: πλήκτρα"
+
+msgid "LAN game"
+msgstr "Παιχνίδι LAN"
+
+msgid "Internet game"
+msgstr "Παιχνίδι Internet"
+
+msgid "Players:"
+msgstr "Παίκτες:"
+
+msgid "Fullscreen"
+msgstr "Πλήρης οθόνη"
+
+msgid "Music"
+msgstr "Μουσική"
+
+msgid "Sound effects"
+msgstr "Ηχητικά εφέ"
+
+msgid "Volume"
+msgstr "Ένταση"
+
+msgid "Language"
+msgstr "Γλώσσα"
+
+msgid "Back"
+msgstr "Πίσω"
+
+msgid "on"
+msgstr "ναι"
+
+msgid "off"
+msgstr "όχι"
+
+msgid "Not available yet"
+msgstr "Δεν είναι ακόμη διαθέσιμο"
+
+msgid "Press any key"
+msgstr "Πατήστε ένα πλήκτρο"
+

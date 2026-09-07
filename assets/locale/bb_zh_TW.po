@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "單人遊戲"
+
+msgid "Start 2 players game"
+msgstr "雙人遊戲"
+
+msgid "Start LAN game"
+msgstr "區域網路遊戲"
+
+msgid "Start Internet game"
+msgstr "網路遊戲"
+
+msgid "Level editor"
+msgstr "關卡編輯器"
+
+msgid "Options"
+msgstr "選項"
+
+msgid "Change keys"
+msgstr "按鍵設定"
+
+msgid "High scores"
+msgstr "排行榜"
+
+msgid "Play default levelset"
+msgstr "預設關卡"
+
+msgid "Pick levelset and start level"
+msgstr "選擇關卡和起點"
+
+msgid "Play random levels"
+msgstr "隨機關卡"
+
+msgid "Winner!"
+msgstr "勝利！"
+
+msgid "Loser!"
+msgstr "失敗！"
+
+msgid "%s wins!"
+msgstr "%s 獲勝！"
+
+msgid "High scores: levels"
+msgstr "排行榜：關卡"
+
+msgid "High scores: multiplayer training"
+msgstr "排行榜：訓練"
+
+msgid "Choose bubble"
+msgstr "選擇泡泡"
+
+msgid "Navigation"
+msgstr "導覽"
+
+msgid "Levelset"
+msgstr "關卡集"
+
+msgid "Level"
+msgstr "關卡"
+
+msgid "Prev"
+msgstr "上一關"
+
+msgid "Next"
+msgstr "下一關"
+
+msgid "First"
+msgstr "第一關"
+
+msgid "Last"
+msgstr "最後一關"
+
+msgid "New"
+msgstr "新增"
+
+msgid "Open"
+msgstr "開啟"
+
+msgid "Save"
+msgstr "儲存"
+
+msgid "Delete"
+msgstr "刪除"
+
+msgid "Insert"
+msgstr "插入"
+
+msgid "Append"
+msgstr "附加"
+
+msgid "Help!"
+msgstr "說明！"
+
+msgid "OK"
+msgstr "確定"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Start level:"
+msgstr "起始關卡："
+
+msgid "Select levelset to play"
+msgstr "選擇要玩的關卡集"
+
+msgid "Select levelset to open"
+msgstr "選擇要開啟的關卡集"
+
+msgid "Save changes?"
+msgstr "儲存變更？"
+
+msgid "Help: key shortcuts"
+msgstr "說明：快速鍵"
+
+msgid "LAN game"
+msgstr "區域網路遊戲"
+
+msgid "Internet game"
+msgstr "網路遊戲"
+
+msgid "Players:"
+msgstr "玩家："
+
+msgid "Fullscreen"
+msgstr "全螢幕"
+
+msgid "Music"
+msgstr "音樂"
+
+msgid "Sound effects"
+msgstr "音效"
+
+msgid "Volume"
+msgstr "音量"
+
+msgid "Language"
+msgstr "語言"
+
+msgid "Back"
+msgstr "返回"
+
+msgid "on"
+msgstr "開"
+
+msgid "off"
+msgstr "關"
+
+msgid "Not available yet"
+msgstr "尚未提供"
+
+msgid "Press any key"
+msgstr "按任意鍵"
+

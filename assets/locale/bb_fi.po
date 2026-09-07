@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Yhden pelaajan peli"
+
+msgid "Start 2 players game"
+msgstr "Kahden pelaajan peli"
+
+msgid "Start LAN game"
+msgstr "Lähiverkkopeli"
+
+msgid "Start Internet game"
+msgstr "Internet-peli"
+
+msgid "Level editor"
+msgstr "Kenttäeditori"
+
+msgid "Options"
+msgstr "Asetukset"
+
+msgid "Change keys"
+msgstr "Vaihda näppäimet"
+
+msgid "High scores"
+msgstr "Ennätykset"
+
+msgid "Play default levelset"
+msgstr "Pelaa oletuskenttiä"
+
+msgid "Pick levelset and start level"
+msgstr "Valitse kentät ja aloituskenttä"
+
+msgid "Play random levels"
+msgstr "Satunnaiset kentät"
+
+msgid "Winner!"
+msgstr "Voittaja!"
+
+msgid "Loser!"
+msgstr "Hävisit!"
+
+msgid "%s wins!"
+msgstr "%s voittaa!"
+
+msgid "High scores: levels"
+msgstr "Ennätykset: kentät"
+
+msgid "High scores: multiplayer training"
+msgstr "Ennätykset: harjoittelu"
+
+msgid "Choose bubble"
+msgstr "Valitse kupla"
+
+msgid "Navigation"
+msgstr "Siirtyminen"
+
+msgid "Levelset"
+msgstr "Kenttäsarja"
+
+msgid "Level"
+msgstr "Kenttä"
+
+msgid "Prev"
+msgstr "Edellinen"
+
+msgid "Next"
+msgstr "Seuraava"
+
+msgid "First"
+msgstr "Ensimmäinen"
+
+msgid "Last"
+msgstr "Viimeinen"
+
+msgid "New"
+msgstr "Uusi"
+
+msgid "Open"
+msgstr "Avaa"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Delete"
+msgstr "Poista"
+
+msgid "Insert"
+msgstr "Lisää"
+
+msgid "Append"
+msgstr "Lisää perään"
+
+msgid "Help!"
+msgstr "Ohje!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Start level:"
+msgstr "Aloituskenttä:"
+
+msgid "Select levelset to play"
+msgstr "Valitse pelattavat kentät"
+
+msgid "Select levelset to open"
+msgstr "Valitse avattavat kentät"
+
+msgid "Save changes?"
+msgstr "Tallennetaanko muutokset?"
+
+msgid "Help: key shortcuts"
+msgstr "Ohje: näppäimet"
+
+msgid "LAN game"
+msgstr "Lähiverkkopeli"
+
+msgid "Internet game"
+msgstr "Internet-peli"
+
+msgid "Players:"
+msgstr "Pelaajat:"
+
+msgid "Fullscreen"
+msgstr "Koko näyttö"
+
+msgid "Music"
+msgstr "Musiikki"
+
+msgid "Sound effects"
+msgstr "Äänitehosteet"
+
+msgid "Volume"
+msgstr "Äänenvoimakkuus"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Back"
+msgstr "Takaisin"
+
+msgid "on"
+msgstr "päällä"
+
+msgid "off"
+msgstr "pois"
+
+msgid "Not available yet"
+msgstr "Ei vielä saatavilla"
+
+msgid "Press any key"
+msgstr "Paina jotain näppäintä"
+

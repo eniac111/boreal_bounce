@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Jogo para 1 jogador"
+
+msgid "Start 2 players game"
+msgstr "Jogo para 2 jogadores"
+
+msgid "Start LAN game"
+msgstr "Jogo em rede local"
+
+msgid "Start Internet game"
+msgstr "Jogo pela Internet"
+
+msgid "Level editor"
+msgstr "Editor de níveis"
+
+msgid "Options"
+msgstr "Opções"
+
+msgid "Change keys"
+msgstr "Mudar teclas"
+
+msgid "High scores"
+msgstr "Recordes"
+
+msgid "Play default levelset"
+msgstr "Jogar níveis predefinidos"
+
+msgid "Pick levelset and start level"
+msgstr "Escolher níveis e início"
+
+msgid "Play random levels"
+msgstr "Níveis aleatórios"
+
+msgid "Winner!"
+msgstr "Vencedor!"
+
+msgid "Loser!"
+msgstr "Perdeu!"
+
+msgid "%s wins!"
+msgstr "%s venceu!"
+
+msgid "High scores: levels"
+msgstr "Recordes: níveis"
+
+msgid "High scores: multiplayer training"
+msgstr "Recordes: treino"
+
+msgid "Choose bubble"
+msgstr "Escolhe a bolha"
+
+msgid "Navigation"
+msgstr "Navegação"
+
+msgid "Levelset"
+msgstr "Conjunto de níveis"
+
+msgid "Level"
+msgstr "Nível"
+
+msgid "Prev"
+msgstr "Anterior"
+
+msgid "Next"
+msgstr "Seguinte"
+
+msgid "First"
+msgstr "Primeiro"
+
+msgid "Last"
+msgstr "Último"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "Open"
+msgstr "Abrir"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Delete"
+msgstr "Apagar"
+
+msgid "Insert"
+msgstr "Inserir"
+
+msgid "Append"
+msgstr "Adicionar"
+
+msgid "Help!"
+msgstr "Ajuda!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Start level:"
+msgstr "Nível inicial:"
+
+msgid "Select levelset to play"
+msgstr "Escolhe os níveis para jogar"
+
+msgid "Select levelset to open"
+msgstr "Escolhe os níveis a abrir"
+
+msgid "Save changes?"
+msgstr "Guardar alterações?"
+
+msgid "Help: key shortcuts"
+msgstr "Ajuda: teclas"
+
+msgid "LAN game"
+msgstr "Jogo em rede local"
+
+msgid "Internet game"
+msgstr "Jogo pela Internet"
+
+msgid "Players:"
+msgstr "Jogadores:"
+
+msgid "Fullscreen"
+msgstr "Ecrã completo"
+
+msgid "Music"
+msgstr "Música"
+
+msgid "Sound effects"
+msgstr "Efeitos sonoros"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Back"
+msgstr "Voltar"
+
+msgid "on"
+msgstr "ligado"
+
+msgid "off"
+msgstr "desligado"
+
+msgid "Not available yet"
+msgstr "Ainda não disponível"
+
+msgid "Press any key"
+msgstr "Prime uma tecla"
+

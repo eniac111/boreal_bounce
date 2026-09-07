@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr ""
+
+msgid "Start 2 players game"
+msgstr ""
+
+msgid "Start LAN game"
+msgstr ""
+
+msgid "Start Internet game"
+msgstr ""
+
+msgid "Level editor"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Change keys"
+msgstr ""
+
+msgid "High scores"
+msgstr ""
+
+msgid "Play default levelset"
+msgstr ""
+
+msgid "Pick levelset and start level"
+msgstr ""
+
+msgid "Play random levels"
+msgstr ""
+
+msgid "Winner!"
+msgstr ""
+
+msgid "Loser!"
+msgstr ""
+
+msgid "%s wins!"
+msgstr ""
+
+msgid "High scores: levels"
+msgstr ""
+
+msgid "High scores: multiplayer training"
+msgstr ""
+
+msgid "Choose bubble"
+msgstr ""
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Levelset"
+msgstr ""
+
+msgid "Level"
+msgstr ""
+
+msgid "Prev"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "First"
+msgstr ""
+
+msgid "Last"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Insert"
+msgstr ""
+
+msgid "Append"
+msgstr ""
+
+msgid "Help!"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Start level:"
+msgstr ""
+
+msgid "Select levelset to play"
+msgstr ""
+
+msgid "Select levelset to open"
+msgstr ""
+
+msgid "Save changes?"
+msgstr ""
+
+msgid "Help: key shortcuts"
+msgstr ""
+
+msgid "LAN game"
+msgstr ""
+
+msgid "Internet game"
+msgstr ""
+
+msgid "Players:"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Music"
+msgstr ""
+
+msgid "Sound effects"
+msgstr ""
+
+msgid "Volume"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "on"
+msgstr ""
+
+msgid "off"
+msgstr ""
+
+msgid "Not available yet"
+msgstr ""
+
+msgid "Press any key"
+msgstr ""
+

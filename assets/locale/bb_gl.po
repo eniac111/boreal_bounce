@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Partida dun xogador"
+
+msgid "Start 2 players game"
+msgstr "Partida de dous xogadores"
+
+msgid "Start LAN game"
+msgstr "Partida en rede local"
+
+msgid "Start Internet game"
+msgstr "Partida por Internet"
+
+msgid "Level editor"
+msgstr "Editor de niveis"
+
+msgid "Options"
+msgstr "Opcións"
+
+msgid "Change keys"
+msgstr "Cambiar teclas"
+
+msgid "High scores"
+msgstr "Mellores puntuacións"
+
+msgid "Play default levelset"
+msgstr "Xogar os niveis por defecto"
+
+msgid "Pick levelset and start level"
+msgstr "Escoller niveis e nivel inicial"
+
+msgid "Play random levels"
+msgstr "Niveis aleatorios"
+
+msgid "Winner!"
+msgstr "Gañador!"
+
+msgid "Loser!"
+msgstr "Perdedor!"
+
+msgid "%s wins!"
+msgstr "%s gaña!"
+
+msgid "High scores: levels"
+msgstr "Puntuacións: niveis"
+
+msgid "High scores: multiplayer training"
+msgstr "Puntuacións: adestramento"
+
+msgid "Choose bubble"
+msgstr "Escolle burbulla"
+
+msgid "Navigation"
+msgstr "Navegación"
+
+msgid "Levelset"
+msgstr "Conxunto de niveis"
+
+msgid "Level"
+msgstr "Nivel"
+
+msgid "Prev"
+msgstr "Anterior"
+
+msgid "Next"
+msgstr "Seguinte"
+
+msgid "First"
+msgstr "Primeiro"
+
+msgid "Last"
+msgstr "Último"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "Open"
+msgstr "Abrir"
+
+msgid "Save"
+msgstr "Gardar"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Insert"
+msgstr "Inserir"
+
+msgid "Append"
+msgstr "Engadir"
+
+msgid "Help!"
+msgstr "Axuda!"
+
+msgid "OK"
+msgstr "Aceptar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Start level:"
+msgstr "Nivel inicial:"
+
+msgid "Select levelset to play"
+msgstr "Escolle os niveis para xogar"
+
+msgid "Select levelset to open"
+msgstr "Escolle os niveis a abrir"
+
+msgid "Save changes?"
+msgstr "Gardar os cambios?"
+
+msgid "Help: key shortcuts"
+msgstr "Axuda: teclas"
+
+msgid "LAN game"
+msgstr "Partida en rede local"
+
+msgid "Internet game"
+msgstr "Partida por Internet"
+
+msgid "Players:"
+msgstr "Xogadores:"
+
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+msgid "Music"
+msgstr "Música"
+
+msgid "Sound effects"
+msgstr "Efectos de son"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Back"
+msgstr "Volver"
+
+msgid "on"
+msgstr "si"
+
+msgid "off"
+msgstr "non"
+
+msgid "Not available yet"
+msgstr "Aínda non dispoñible"
+
+msgid "Press any key"
+msgstr "Preme unha tecla"
+

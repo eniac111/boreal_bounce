@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Hra pro jednoho hráče"
+
+msgid "Start 2 players game"
+msgstr "Hra pro dva hráče"
+
+msgid "Start LAN game"
+msgstr "Hra v místní síti"
+
+msgid "Start Internet game"
+msgstr "Hra přes internet"
+
+msgid "Level editor"
+msgstr "Editor úrovní"
+
+msgid "Options"
+msgstr "Nastavení"
+
+msgid "Change keys"
+msgstr "Změnit klávesy"
+
+msgid "High scores"
+msgstr "Nejlepší výsledky"
+
+msgid "Play default levelset"
+msgstr "Hrát výchozí úrovně"
+
+msgid "Pick levelset and start level"
+msgstr "Vybrat sadu a počáteční úroveň"
+
+msgid "Play random levels"
+msgstr "Náhodné úrovně"
+
+msgid "Winner!"
+msgstr "Vítěz!"
+
+msgid "Loser!"
+msgstr "Prohra!"
+
+msgid "%s wins!"
+msgstr "%s vyhrává!"
+
+msgid "High scores: levels"
+msgstr "Nejlepší výsledky: úrovně"
+
+msgid "High scores: multiplayer training"
+msgstr "Nejlepší výsledky: trénink"
+
+msgid "Choose bubble"
+msgstr "Vyber bublinu"
+
+msgid "Navigation"
+msgstr "Navigace"
+
+msgid "Levelset"
+msgstr "Sada úrovní"
+
+msgid "Level"
+msgstr "Úroveň"
+
+msgid "Prev"
+msgstr "Předchozí"
+
+msgid "Next"
+msgstr "Další"
+
+msgid "First"
+msgstr "První"
+
+msgid "Last"
+msgstr "Poslední"
+
+msgid "New"
+msgstr "Nová"
+
+msgid "Open"
+msgstr "Otevřít"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "Insert"
+msgstr "Vložit"
+
+msgid "Append"
+msgstr "Přidat"
+
+msgid "Help!"
+msgstr "Nápověda!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Start level:"
+msgstr "Počáteční úroveň:"
+
+msgid "Select levelset to play"
+msgstr "Vyber sadu ke hraní"
+
+msgid "Select levelset to open"
+msgstr "Vyber sadu k otevření"
+
+msgid "Save changes?"
+msgstr "Uložit změny?"
+
+msgid "Help: key shortcuts"
+msgstr "Nápověda: klávesy"
+
+msgid "LAN game"
+msgstr "Hra v síti LAN"
+
+msgid "Internet game"
+msgstr "Hra přes internet"
+
+msgid "Players:"
+msgstr "Hráči:"
+
+msgid "Fullscreen"
+msgstr "Celá obrazovka"
+
+msgid "Music"
+msgstr "Hudba"
+
+msgid "Sound effects"
+msgstr "Zvukové efekty"
+
+msgid "Volume"
+msgstr "Hlasitost"
+
+msgid "Language"
+msgstr "Jazyk"
+
+msgid "Back"
+msgstr "Zpět"
+
+msgid "on"
+msgstr "zapnuto"
+
+msgid "off"
+msgstr "vypnuto"
+
+msgid "Not available yet"
+msgstr "Zatím není k dispozici"
+
+msgid "Press any key"
+msgstr "Stiskni libovolnou klávesu"
+

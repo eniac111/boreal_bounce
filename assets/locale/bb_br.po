@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Kregiñ c'hoari 1 c'hoarier"
+
+msgid "Start 2 players game"
+msgstr "Kregiñ c'hoari 2 c'hoarier"
+
+msgid "Start LAN game"
+msgstr "Kregiñ c'hoari LAN"
+
+msgid "Start Internet game"
+msgstr "Kregiñ c'hoari Internet"
+
+msgid "Level editor"
+msgstr "Aozer live"
+
+msgid "Options"
+msgstr "Dibarzhioù"
+
+msgid "Change keys"
+msgstr "Cheñch stokelloù"
+
+msgid "High scores"
+msgstr "Skorioù uhelañ"
+
+msgid "Play default levelset"
+msgstr "C'hoari al liveoù dre ziouer"
+
+msgid "Pick levelset and start level"
+msgstr "Dibab liveoù ha live kregiñ"
+
+msgid "Play random levels"
+msgstr "C'hoari liveoù dre zegouezh"
+
+msgid "Winner!"
+msgstr "Trec'hour!"
+
+msgid "Loser!"
+msgstr "Kollet!"
+
+msgid "%s wins!"
+msgstr "%s a drec'h!"
+
+msgid "High scores: levels"
+msgstr "Skorioù: liveoù"
+
+msgid "High scores: multiplayer training"
+msgstr "Skorioù: pleustradeg"
+
+msgid "Choose bubble"
+msgstr "Dibab ur vurlu"
+
+msgid "Navigation"
+msgstr "Merdeiñ"
+
+msgid "Levelset"
+msgstr "Strollad liveoù"
+
+msgid "Level"
+msgstr "Live"
+
+msgid "Prev"
+msgstr "Kent"
+
+msgid "Next"
+msgstr "War-lerc'h"
+
+msgid "First"
+msgstr "Kentañ"
+
+msgid "Last"
+msgstr "Diwezhañ"
+
+msgid "New"
+msgstr "Nevez"
+
+msgid "Open"
+msgstr "Digeriñ"
+
+msgid "Save"
+msgstr "Enrollañ"
+
+msgid "Delete"
+msgstr "Dilemel"
+
+msgid "Insert"
+msgstr "Enlakaat"
+
+msgid "Append"
+msgstr "Ouzhpennañ"
+
+msgid "Help!"
+msgstr "Skoazell!"
+
+msgid "OK"
+msgstr "Mat eo"
+
+msgid "Cancel"
+msgstr "Nullañ"
+
+msgid "Start level:"
+msgstr "Live kregiñ:"
+
+msgid "Select levelset to play"
+msgstr "Dibab liveoù da c'hoari"
+
+msgid "Select levelset to open"
+msgstr "Dibab liveoù da zigeriñ"
+
+msgid "Save changes?"
+msgstr "Enrollañ ar c'hemmoù?"
+
+msgid "Help: key shortcuts"
+msgstr "Skoazell: berradennoù"
+
+msgid "LAN game"
+msgstr "C'hoari LAN"
+
+msgid "Internet game"
+msgstr "C'hoari Internet"
+
+msgid "Players:"
+msgstr "C'hoarierien:"
+
+msgid "Fullscreen"
+msgstr "Skramm leun"
+
+msgid "Music"
+msgstr "Sonerezh"
+
+msgid "Sound effects"
+msgstr "Efedoù son"
+
+msgid "Volume"
+msgstr "Nerzh ar son"
+
+msgid "Language"
+msgstr "Yezh"
+
+msgid "Back"
+msgstr "Distreiñ"
+
+msgid "on"
+msgstr "enaouet"
+
+msgid "off"
+msgstr "lazhet"
+
+msgid "Not available yet"
+msgstr "N'eo ket hegerz c'hoazh"
+
+msgid "Press any key"
+msgstr "Pouezit war ur stokell"
+

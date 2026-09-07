@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "بازی تک‌نفره"
+
+msgid "Start 2 players game"
+msgstr "بازی دونفره"
+
+msgid "Start LAN game"
+msgstr "بازی در شبکه محلی"
+
+msgid "Start Internet game"
+msgstr "بازی اینترنتی"
+
+msgid "Level editor"
+msgstr "ویرایشگر مرحله"
+
+msgid "Options"
+msgstr "تنظیمات"
+
+msgid "Change keys"
+msgstr "تغییر کلیدها"
+
+msgid "High scores"
+msgstr "رکوردها"
+
+msgid "Play default levelset"
+msgstr "مرحله‌های پیش‌فرض"
+
+msgid "Pick levelset and start level"
+msgstr "انتخاب مجموعه و مرحله شروع"
+
+msgid "Play random levels"
+msgstr "مرحله‌های تصادفی"
+
+msgid "Winner!"
+msgstr "برنده!"
+
+msgid "Loser!"
+msgstr "بازنده!"
+
+msgid "%s wins!"
+msgstr "%s برنده شد!"
+
+msgid "High scores: levels"
+msgstr "رکوردها: مرحله‌ها"
+
+msgid "High scores: multiplayer training"
+msgstr "رکوردها: تمرین"
+
+msgid "Choose bubble"
+msgstr "انتخاب حباب"
+
+msgid "Navigation"
+msgstr "پیمایش"
+
+msgid "Levelset"
+msgstr "مجموعه مرحله"
+
+msgid "Level"
+msgstr "مرحله"
+
+msgid "Prev"
+msgstr "قبلی"
+
+msgid "Next"
+msgstr "بعدی"
+
+msgid "First"
+msgstr "اولین"
+
+msgid "Last"
+msgstr "آخرین"
+
+msgid "New"
+msgstr "جدید"
+
+msgid "Open"
+msgstr "باز کردن"
+
+msgid "Save"
+msgstr "ذخیره"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Insert"
+msgstr "درج"
+
+msgid "Append"
+msgstr "افزودن"
+
+msgid "Help!"
+msgstr "راهنما!"
+
+msgid "OK"
+msgstr "تأیید"
+
+msgid "Cancel"
+msgstr "لغو"
+
+msgid "Start level:"
+msgstr "مرحله شروع:"
+
+msgid "Select levelset to play"
+msgstr "انتخاب مجموعه برای بازی"
+
+msgid "Select levelset to open"
+msgstr "انتخاب مجموعه برای باز کردن"
+
+msgid "Save changes?"
+msgstr "تغییرات ذخیره شود؟"
+
+msgid "Help: key shortcuts"
+msgstr "راهنما: کلیدها"
+
+msgid "LAN game"
+msgstr "بازی شبکه محلی"
+
+msgid "Internet game"
+msgstr "بازی اینترنتی"
+
+msgid "Players:"
+msgstr "بازیکنان:"
+
+msgid "Fullscreen"
+msgstr "تمام‌صفحه"
+
+msgid "Music"
+msgstr "موسیقی"
+
+msgid "Sound effects"
+msgstr "جلوه‌های صوتی"
+
+msgid "Volume"
+msgstr "بلندی صدا"
+
+msgid "Language"
+msgstr "زبان"
+
+msgid "Back"
+msgstr "بازگشت"
+
+msgid "on"
+msgstr "روشن"
+
+msgid "off"
+msgstr "خاموش"
+
+msgid "Not available yet"
+msgstr "هنوز در دسترس نیست"
+
+msgid "Press any key"
+msgstr "کلیدی را فشار دهید"
+

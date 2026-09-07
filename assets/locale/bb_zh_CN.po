@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "单人游戏"
+
+msgid "Start 2 players game"
+msgstr "双人游戏"
+
+msgid "Start LAN game"
+msgstr "局域网游戏"
+
+msgid "Start Internet game"
+msgstr "网络游戏"
+
+msgid "Level editor"
+msgstr "关卡编辑器"
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Change keys"
+msgstr "按键设置"
+
+msgid "High scores"
+msgstr "排行榜"
+
+msgid "Play default levelset"
+msgstr "默认关卡"
+
+msgid "Pick levelset and start level"
+msgstr "选择关卡和起点"
+
+msgid "Play random levels"
+msgstr "随机关卡"
+
+msgid "Winner!"
+msgstr "胜利！"
+
+msgid "Loser!"
+msgstr "失败！"
+
+msgid "%s wins!"
+msgstr "%s 获胜！"
+
+msgid "High scores: levels"
+msgstr "排行榜：关卡"
+
+msgid "High scores: multiplayer training"
+msgstr "排行榜：训练"
+
+msgid "Choose bubble"
+msgstr "选择泡泡"
+
+msgid "Navigation"
+msgstr "导航"
+
+msgid "Levelset"
+msgstr "关卡集"
+
+msgid "Level"
+msgstr "关卡"
+
+msgid "Prev"
+msgstr "上一关"
+
+msgid "Next"
+msgstr "下一关"
+
+msgid "First"
+msgstr "第一关"
+
+msgid "Last"
+msgstr "最后一关"
+
+msgid "New"
+msgstr "新建"
+
+msgid "Open"
+msgstr "打开"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Insert"
+msgstr "插入"
+
+msgid "Append"
+msgstr "追加"
+
+msgid "Help!"
+msgstr "帮助！"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Start level:"
+msgstr "起始关卡："
+
+msgid "Select levelset to play"
+msgstr "选择要玩的关卡集"
+
+msgid "Select levelset to open"
+msgstr "选择要打开的关卡集"
+
+msgid "Save changes?"
+msgstr "保存更改？"
+
+msgid "Help: key shortcuts"
+msgstr "帮助：快捷键"
+
+msgid "LAN game"
+msgstr "局域网游戏"
+
+msgid "Internet game"
+msgstr "网络游戏"
+
+msgid "Players:"
+msgstr "玩家："
+
+msgid "Fullscreen"
+msgstr "全屏"
+
+msgid "Music"
+msgstr "音乐"
+
+msgid "Sound effects"
+msgstr "音效"
+
+msgid "Volume"
+msgstr "音量"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Back"
+msgstr "返回"
+
+msgid "on"
+msgstr "开"
+
+msgid "off"
+msgstr "关"
+
+msgid "Not available yet"
+msgstr "尚不可用"
+
+msgid "Press any key"
+msgstr "按任意键"
+

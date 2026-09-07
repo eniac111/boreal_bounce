@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Vieno žaidėjo žaidimas"
+
+msgid "Start 2 players game"
+msgstr "Dviejų žaidėjų žaidimas"
+
+msgid "Start LAN game"
+msgstr "Vietinio tinklo žaidimas"
+
+msgid "Start Internet game"
+msgstr "Interneto žaidimas"
+
+msgid "Level editor"
+msgstr "Lygių redaktorius"
+
+msgid "Options"
+msgstr "Nustatymai"
+
+msgid "Change keys"
+msgstr "Keisti klavišus"
+
+msgid "High scores"
+msgstr "Rekordai"
+
+msgid "Play default levelset"
+msgstr "Žaisti numatytus lygius"
+
+msgid "Pick levelset and start level"
+msgstr "Pasirinkti lygius ir pradžią"
+
+msgid "Play random levels"
+msgstr "Atsitiktiniai lygiai"
+
+msgid "Winner!"
+msgstr "Laimėjai!"
+
+msgid "Loser!"
+msgstr "Pralaimėjai!"
+
+msgid "%s wins!"
+msgstr "%s laimi!"
+
+msgid "High scores: levels"
+msgstr "Rekordai: lygiai"
+
+msgid "High scores: multiplayer training"
+msgstr "Rekordai: treniruotė"
+
+msgid "Choose bubble"
+msgstr "Pasirink burbulą"
+
+msgid "Navigation"
+msgstr "Naršymas"
+
+msgid "Levelset"
+msgstr "Lygių rinkinys"
+
+msgid "Level"
+msgstr "Lygis"
+
+msgid "Prev"
+msgstr "Ankstesnis"
+
+msgid "Next"
+msgstr "Kitas"
+
+msgid "First"
+msgstr "Pirmas"
+
+msgid "Last"
+msgstr "Paskutinis"
+
+msgid "New"
+msgstr "Naujas"
+
+msgid "Open"
+msgstr "Atverti"
+
+msgid "Save"
+msgstr "Įrašyti"
+
+msgid "Delete"
+msgstr "Ištrinti"
+
+msgid "Insert"
+msgstr "Įterpti"
+
+msgid "Append"
+msgstr "Pridėti"
+
+msgid "Help!"
+msgstr "Pagalba!"
+
+msgid "OK"
+msgstr "Gerai"
+
+msgid "Cancel"
+msgstr "Atšaukti"
+
+msgid "Start level:"
+msgstr "Pradinis lygis:"
+
+msgid "Select levelset to play"
+msgstr "Pasirink lygius žaisti"
+
+msgid "Select levelset to open"
+msgstr "Pasirink lygius atverti"
+
+msgid "Save changes?"
+msgstr "Įrašyti pakeitimus?"
+
+msgid "Help: key shortcuts"
+msgstr "Pagalba: klavišai"
+
+msgid "LAN game"
+msgstr "LAN žaidimas"
+
+msgid "Internet game"
+msgstr "Interneto žaidimas"
+
+msgid "Players:"
+msgstr "Žaidėjai:"
+
+msgid "Fullscreen"
+msgstr "Visas ekranas"
+
+msgid "Music"
+msgstr "Muzika"
+
+msgid "Sound effects"
+msgstr "Garso efektai"
+
+msgid "Volume"
+msgstr "Garsumas"
+
+msgid "Language"
+msgstr "Kalba"
+
+msgid "Back"
+msgstr "Atgal"
+
+msgid "on"
+msgstr "įjungta"
+
+msgid "off"
+msgstr "išjungta"
+
+msgid "Not available yet"
+msgstr "Dar neprieinama"
+
+msgid "Press any key"
+msgstr "Spausk bet kurį klavišą"
+

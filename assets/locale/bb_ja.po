@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "ひとりで遊ぶ"
+
+msgid "Start 2 players game"
+msgstr "ふたりで遊ぶ"
+
+msgid "Start LAN game"
+msgstr "LAN対戦"
+
+msgid "Start Internet game"
+msgstr "インターネット対戦"
+
+msgid "Level editor"
+msgstr "レベルエディタ"
+
+msgid "Options"
+msgstr "設定"
+
+msgid "Change keys"
+msgstr "キー設定"
+
+msgid "High scores"
+msgstr "ハイスコア"
+
+msgid "Play default levelset"
+msgstr "標準レベルで遊ぶ"
+
+msgid "Pick levelset and start level"
+msgstr "レベルと開始位置を選ぶ"
+
+msgid "Play random levels"
+msgstr "ランダムレベル"
+
+msgid "Winner!"
+msgstr "勝ち！"
+
+msgid "Loser!"
+msgstr "負け…"
+
+msgid "%s wins!"
+msgstr "%s の勝ち！"
+
+msgid "High scores: levels"
+msgstr "ハイスコア: レベル"
+
+msgid "High scores: multiplayer training"
+msgstr "ハイスコア: トレーニング"
+
+msgid "Choose bubble"
+msgstr "バブルを選ぶ"
+
+msgid "Navigation"
+msgstr "移動"
+
+msgid "Levelset"
+msgstr "レベルセット"
+
+msgid "Level"
+msgstr "レベル"
+
+msgid "Prev"
+msgstr "前へ"
+
+msgid "Next"
+msgstr "次へ"
+
+msgid "First"
+msgstr "最初"
+
+msgid "Last"
+msgstr "最後"
+
+msgid "New"
+msgstr "新規"
+
+msgid "Open"
+msgstr "開く"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Insert"
+msgstr "挿入"
+
+msgid "Append"
+msgstr "追加"
+
+msgid "Help!"
+msgstr "ヘルプ"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Start level:"
+msgstr "開始レベル:"
+
+msgid "Select levelset to play"
+msgstr "遊ぶレベルセットを選ぶ"
+
+msgid "Select levelset to open"
+msgstr "開くレベルセットを選ぶ"
+
+msgid "Save changes?"
+msgstr "変更を保存しますか？"
+
+msgid "Help: key shortcuts"
+msgstr "ヘルプ: キー操作"
+
+msgid "LAN game"
+msgstr "LAN対戦"
+
+msgid "Internet game"
+msgstr "インターネット対戦"
+
+msgid "Players:"
+msgstr "プレイヤー:"
+
+msgid "Fullscreen"
+msgstr "全画面"
+
+msgid "Music"
+msgstr "音楽"
+
+msgid "Sound effects"
+msgstr "効果音"
+
+msgid "Volume"
+msgstr "音量"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Back"
+msgstr "戻る"
+
+msgid "on"
+msgstr "オン"
+
+msgid "off"
+msgstr "オフ"
+
+msgid "Not available yet"
+msgstr "まだ使えません"
+
+msgid "Press any key"
+msgstr "キーを押してください"
+

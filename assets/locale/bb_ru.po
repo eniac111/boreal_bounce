@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Игра для одного"
+
+msgid "Start 2 players game"
+msgstr "Игра для двоих"
+
+msgid "Start LAN game"
+msgstr "Игра по локальной сети"
+
+msgid "Start Internet game"
+msgstr "Игра через Интернет"
+
+msgid "Level editor"
+msgstr "Редактор уровней"
+
+msgid "Options"
+msgstr "Настройки"
+
+msgid "Change keys"
+msgstr "Настроить клавиши"
+
+msgid "High scores"
+msgstr "Рекорды"
+
+msgid "Play default levelset"
+msgstr "Стандартные уровни"
+
+msgid "Pick levelset and start level"
+msgstr "Выбрать уровни и старт"
+
+msgid "Play random levels"
+msgstr "Случайные уровни"
+
+msgid "Winner!"
+msgstr "Победа!"
+
+msgid "Loser!"
+msgstr "Поражение!"
+
+msgid "%s wins!"
+msgstr "Победил %s!"
+
+msgid "High scores: levels"
+msgstr "Рекорды: уровни"
+
+msgid "High scores: multiplayer training"
+msgstr "Рекорды: тренировка"
+
+msgid "Choose bubble"
+msgstr "Выбор шарика"
+
+msgid "Navigation"
+msgstr "Навигация"
+
+msgid "Levelset"
+msgstr "Набор уровней"
+
+msgid "Level"
+msgstr "Уровень"
+
+msgid "Prev"
+msgstr "Назад"
+
+msgid "Next"
+msgstr "Вперёд"
+
+msgid "First"
+msgstr "Первый"
+
+msgid "Last"
+msgstr "Последний"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Open"
+msgstr "Открыть"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Insert"
+msgstr "Вставить"
+
+msgid "Append"
+msgstr "Добавить"
+
+msgid "Help!"
+msgstr "Помощь!"
+
+msgid "OK"
+msgstr "ОК"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Start level:"
+msgstr "Начальный уровень:"
+
+msgid "Select levelset to play"
+msgstr "Выберите уровни для игры"
+
+msgid "Select levelset to open"
+msgstr "Выберите уровни для открытия"
+
+msgid "Save changes?"
+msgstr "Сохранить изменения?"
+
+msgid "Help: key shortcuts"
+msgstr "Помощь: клавиши"
+
+msgid "LAN game"
+msgstr "Игра по локальной сети"
+
+msgid "Internet game"
+msgstr "Игра через Интернет"
+
+msgid "Players:"
+msgstr "Игроки:"
+
+msgid "Fullscreen"
+msgstr "Полный экран"
+
+msgid "Music"
+msgstr "Музыка"
+
+msgid "Sound effects"
+msgstr "Звуковые эффекты"
+
+msgid "Volume"
+msgstr "Громкость"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "on"
+msgstr "вкл."
+
+msgid "off"
+msgstr "выкл."
+
+msgid "Not available yet"
+msgstr "Пока недоступно"
+
+msgid "Press any key"
+msgstr "Нажмите любую клавишу"
+

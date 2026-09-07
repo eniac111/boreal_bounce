@@ -1,0 +1,58 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Boreal Bounce"
+config/description="Boreal Bounce: a Godot 4 reimplementation of the puzzle game Frozen-Bubble."
+run/main_scene="res://src/scenes/intro/intro.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="boreal_bounce"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://assets/icons/icon-64x64.png"
+
+[autoload]
+
+Settings="*res://src/autoload/settings.gd"
+Audio="*res://src/autoload/audio.gd"
+Session="*res://src/autoload/session.gd"
+Screens="*res://src/autoload/screens.gd"
+Net="*res://src/autoload/net.gd"
+Debug="*res://src/debug/screenshot.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/size/window_width_override=1280
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/locale/af.po", "res://assets/locale/bg.po", "res://assets/locale/br.po", "res://assets/locale/ca.po", "res://assets/locale/cs.po", "res://assets/locale/da.po", "res://assets/locale/de.po", "res://assets/locale/el.po", "res://assets/locale/eo.po", "res://assets/locale/es.po", "res://assets/locale/fa.po", "res://assets/locale/fi.po", "res://assets/locale/fr.po", "res://assets/locale/gl.po", "res://assets/locale/it.po", "res://assets/locale/ja.po", "res://assets/locale/lt.po", "res://assets/locale/nb.po", "res://assets/locale/ne.po", "res://assets/locale/nl.po", "res://assets/locale/nn.po", "res://assets/locale/pl.po", "res://assets/locale/pt_BR.po", "res://assets/locale/pt.po", "res://assets/locale/ro.po", "res://assets/locale/ru.po", "res://assets/locale/sk.po", "res://assets/locale/sl.po", "res://assets/locale/sv.po", "res://assets/locale/tr.po", "res://assets/locale/zh_CN.po", "res://assets/locale/zh_TW.po", "res://assets/locale/bb_af.po", "res://assets/locale/bb_bg.po", "res://assets/locale/bb_br.po", "res://assets/locale/bb_ca.po", "res://assets/locale/bb_cs.po", "res://assets/locale/bb_da.po", "res://assets/locale/bb_de.po", "res://assets/locale/bb_el.po", "res://assets/locale/bb_eo.po", "res://assets/locale/bb_es.po", "res://assets/locale/bb_fa.po", "res://assets/locale/bb_fi.po", "res://assets/locale/bb_fr.po", "res://assets/locale/bb_gl.po", "res://assets/locale/bb_it.po", "res://assets/locale/bb_ja.po", "res://assets/locale/bb_lt.po", "res://assets/locale/bb_nb.po", "res://assets/locale/bb_ne.po", "res://assets/locale/bb_nl.po", "res://assets/locale/bb_nn.po", "res://assets/locale/bb_pl.po", "res://assets/locale/bb_pt_BR.po", "res://assets/locale/bb_pt.po", "res://assets/locale/bb_ro.po", "res://assets/locale/bb_ru.po", "res://assets/locale/bb_sk.po", "res://assets/locale/bb_sl.po", "res://assets/locale/bb_sv.po", "res://assets/locale/bb_tr.po", "res://assets/locale/bb_zh_CN.po", "res://assets/locale/bb_zh_TW.po")
+
+[importer_defaults]
+
+texture={
+"mipmaps/generate": true
+}
+
+[physics]
+
+common/physics_ticks_per_second=50
+common/physics_interpolation=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=2
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

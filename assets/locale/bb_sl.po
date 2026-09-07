@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "Igra za 1 igralca"
+
+msgid "Start 2 players game"
+msgstr "Igra za 2 igralca"
+
+msgid "Start LAN game"
+msgstr "Igra v lokalnem omrežju"
+
+msgid "Start Internet game"
+msgstr "Internetna igra"
+
+msgid "Level editor"
+msgstr "Urejevalnik stopenj"
+
+msgid "Options"
+msgstr "Možnosti"
+
+msgid "Change keys"
+msgstr "Spremeni tipke"
+
+msgid "High scores"
+msgstr "Najboljši rezultati"
+
+msgid "Play default levelset"
+msgstr "Igraj privzete stopnje"
+
+msgid "Pick levelset and start level"
+msgstr "Izberi stopnje in začetek"
+
+msgid "Play random levels"
+msgstr "Naključne stopnje"
+
+msgid "Winner!"
+msgstr "Zmagovalec!"
+
+msgid "Loser!"
+msgstr "Poraz!"
+
+msgid "%s wins!"
+msgstr "%s zmaga!"
+
+msgid "High scores: levels"
+msgstr "Rezultati: stopnje"
+
+msgid "High scores: multiplayer training"
+msgstr "Rezultati: trening"
+
+msgid "Choose bubble"
+msgstr "Izberi mehurček"
+
+msgid "Navigation"
+msgstr "Krmarjenje"
+
+msgid "Levelset"
+msgstr "Nabor stopenj"
+
+msgid "Level"
+msgstr "Stopnja"
+
+msgid "Prev"
+msgstr "Prejšnja"
+
+msgid "Next"
+msgstr "Naslednja"
+
+msgid "First"
+msgstr "Prva"
+
+msgid "Last"
+msgstr "Zadnja"
+
+msgid "New"
+msgstr "Nov"
+
+msgid "Open"
+msgstr "Odpri"
+
+msgid "Save"
+msgstr "Shrani"
+
+msgid "Delete"
+msgstr "Izbriši"
+
+msgid "Insert"
+msgstr "Vstavi"
+
+msgid "Append"
+msgstr "Dodaj"
+
+msgid "Help!"
+msgstr "Pomoč!"
+
+msgid "OK"
+msgstr "V redu"
+
+msgid "Cancel"
+msgstr "Prekliči"
+
+msgid "Start level:"
+msgstr "Začetna stopnja:"
+
+msgid "Select levelset to play"
+msgstr "Izberi stopnje za igro"
+
+msgid "Select levelset to open"
+msgstr "Izberi stopnje za odprtje"
+
+msgid "Save changes?"
+msgstr "Shranim spremembe?"
+
+msgid "Help: key shortcuts"
+msgstr "Pomoč: tipke"
+
+msgid "LAN game"
+msgstr "Igra LAN"
+
+msgid "Internet game"
+msgstr "Internetna igra"
+
+msgid "Players:"
+msgstr "Igralci:"
+
+msgid "Fullscreen"
+msgstr "Celozaslonski način"
+
+msgid "Music"
+msgstr "Glasba"
+
+msgid "Sound effects"
+msgstr "Zvočni učinki"
+
+msgid "Volume"
+msgstr "Glasnost"
+
+msgid "Language"
+msgstr "Jezik"
+
+msgid "Back"
+msgstr "Nazaj"
+
+msgid "on"
+msgstr "vklopljeno"
+
+msgid "off"
+msgstr "izklopljeno"
+
+msgid "Not available yet"
+msgstr "Še ni na voljo"
+
+msgid "Press any key"
+msgstr "Pritisni tipko"
+

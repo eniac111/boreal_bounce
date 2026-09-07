@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boreal Bounce\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: tools/gen_translations.py (machine-assisted, needs native review)\n"
+
+msgid "Start 1 player game"
+msgstr "१ खेलाडीको खेल"
+
+msgid "Start 2 players game"
+msgstr "२ खेलाडीको खेल"
+
+msgid "Start LAN game"
+msgstr "स्थानीय नेटवर्क खेल"
+
+msgid "Start Internet game"
+msgstr "इन्टरनेट खेल"
+
+msgid "Level editor"
+msgstr "स्तर सम्पादक"
+
+msgid "Options"
+msgstr "विकल्पहरू"
+
+msgid "Change keys"
+msgstr "कुञ्जीहरू बदल्नुहोस्"
+
+msgid "High scores"
+msgstr "उच्च स्कोरहरू"
+
+msgid "Play default levelset"
+msgstr "पूर्वनिर्धारित स्तरहरू खेल्नुहोस्"
+
+msgid "Pick levelset and start level"
+msgstr "स्तर र सुरुवात छान्नुहोस्"
+
+msgid "Play random levels"
+msgstr "अनियमित स्तरहरू"
+
+msgid "Winner!"
+msgstr "विजेता!"
+
+msgid "Loser!"
+msgstr "हार!"
+
+msgid "%s wins!"
+msgstr "%s जित्यो!"
+
+msgid "High scores: levels"
+msgstr "उच्च स्कोर: स्तरहरू"
+
+msgid "High scores: multiplayer training"
+msgstr "उच्च स्कोर: प्रशिक्षण"
+
+msgid "Choose bubble"
+msgstr "बबल छान्नुहोस्"
+
+msgid "Navigation"
+msgstr "नेभिगेसन"
+
+msgid "Levelset"
+msgstr "स्तर सेट"
+
+msgid "Level"
+msgstr "स्तर"
+
+msgid "Prev"
+msgstr "अघिल्लो"
+
+msgid "Next"
+msgstr "अर्को"
+
+msgid "First"
+msgstr "पहिलो"
+
+msgid "Last"
+msgstr "अन्तिम"
+
+msgid "New"
+msgstr "नयाँ"
+
+msgid "Open"
+msgstr "खोल्नुहोस्"
+
+msgid "Save"
+msgstr "सुरक्षित गर्नुहोस्"
+
+msgid "Delete"
+msgstr "मेटाउनुहोस्"
+
+msgid "Insert"
+msgstr "घुसाउनुहोस्"
+
+msgid "Append"
+msgstr "थप्नुहोस्"
+
+msgid "Help!"
+msgstr "मद्दत!"
+
+msgid "OK"
+msgstr "ठिक छ"
+
+msgid "Cancel"
+msgstr "रद्द"
+
+msgid "Start level:"
+msgstr "सुरु स्तर:"
+
+msgid "Select levelset to play"
+msgstr "खेल्न स्तर छान्नुहोस्"
+
+msgid "Select levelset to open"
+msgstr "खोल्न स्तर छान्नुहोस्"
+
+msgid "Save changes?"
+msgstr "परिवर्तन सुरक्षित गर्ने?"
+
+msgid "Help: key shortcuts"
+msgstr "मद्दत: कुञ्जीहरू"
+
+msgid "LAN game"
+msgstr "स्थानीय नेटवर्क खेल"
+
+msgid "Internet game"
+msgstr "इन्टरनेट खेल"
+
+msgid "Players:"
+msgstr "खेलाडीहरू:"
+
+msgid "Fullscreen"
+msgstr "पूर्ण स्क्रिन"
+
+msgid "Music"
+msgstr "संगीत"
+
+msgid "Sound effects"
+msgstr "ध्वनि प्रभाव"
+
+msgid "Volume"
+msgstr "भोल्युम"
+
+msgid "Language"
+msgstr "भाषा"
+
+msgid "Back"
+msgstr "पछाडि"
+
+msgid "on"
+msgstr "खुला"
+
+msgid "off"
+msgstr "बन्द"
+
+msgid "Not available yet"
+msgstr "अझै उपलब्ध छैन"
+
+msgid "Press any key"
+msgstr "कुनै कुञ्जी थिच्नुहोस्"
+
