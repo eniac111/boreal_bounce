@@ -35,7 +35,17 @@ const BANNER_MAXX := 596
 const BANNER_Y := 243
 const BANNER_START := 1000
 const BANNER_SPACING := 80
-const BANNER_ORDER := ["artwork", "soundtrack", "cpucontrol", "leveleditor"]
+const BANNER_HEIGHT := 20
+const BANNER_TEXT_SIZE := 14
+## Scrolling credits, replacing the original's baked banner images so they can be translated
+## and stay sharp. Each entry is the role, the people, and the bubble colour of its icon.
+const BANNER_CREDITS := [
+	{"role": "Artwork", "names": "Alexis Younes (Ayo) and Amaury Amblard Ladurantie", "bubble": 7},
+	{"role": "Soundtrack", "names": "Matthias Le Bidan", "bubble": 5},
+	{"role": "CPU control", "names": "Guillaume Cottenceau", "bubble": 4},
+	{"role": "Level editor", "names": "Kim and David Johan", "bubble": 3},
+	{"role": "Godot port", "names": "Blagovest Petrov", "bubble": 8},
+]
 const EYES := {
 	"green": [[Vector2(411, 385), "left-green"], [Vector2(434, 378), "right-green"]],
 	"purple": [[Vector2(522, 356), "left-purple"], [Vector2(535, 356), "right-purple"]],
@@ -75,6 +85,7 @@ var _broken := {}
 var _pixelize: ShaderMaterial
 var _banners: Array = []
 var _banner_max := 0
+var _banner_clip: Control
 var _eyes := {}
 var _logo: Node2D
 var _sub: Node2D
@@ -100,24 +111,13 @@ func _ready() -> void:
 # --- building --------------------------------------------------------------------------------
 
 func _build_logo() -> void:
-	# Placeholder title until real logo art exists (the original logo is not reused).
+	# the importer renders the tag (tools/import_assets.py: render_logo)
 	_logo = Node2D.new()
 	_logo.position = Vector2(400 + 95, 15 + 59)
 	add_child(_logo)
-	var line1 := UiText.make("Boreal", 40, Color(0.85, 0.95, 1.0), true)
-	line1.add_theme_color_override("font_outline_color", Color(0.1, 0.25, 0.5))
-	line1.add_theme_constant_override("outline_size", 6)
-	line1.position = Vector2(-95, -60)
-	line1.size = Vector2(190, 52)
-	line1.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_logo.add_child(line1)
-	var line2 := UiText.make("Bounce", 40, Color(1.0, 0.9, 0.95), true)
-	line2.add_theme_color_override("font_outline_color", Color(0.5, 0.1, 0.35))
-	line2.add_theme_constant_override("outline_size", 6)
-	line2.position = Vector2(-95, -8)
-	line2.size = Vector2(190, 52)
-	line2.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_logo.add_child(line2)
+	var art := Sprite2D.new()
+	art.texture = Art.tex("res://assets/gfx/gen/logo.png")
+	_logo.add_child(art)
 
 
 func _build_entries() -> void:
@@ -153,13 +153,38 @@ func _build_entries() -> void:
 
 
 func _build_banner() -> void:
+	_banner_clip = Control.new()
+	_banner_clip.name = "Credits"
+	_banner_clip.position = Vector2(BANNER_MINX, BANNER_Y)
+	_banner_clip.size = Vector2(BANNER_MAXX - BANNER_MINX, BANNER_HEIGHT)
+	_banner_clip.clip_contents = true
+	_banner_clip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_banner_clip)
 	var x := BANNER_START
-	for name in BANNER_ORDER:
-		var tex: Texture2D = Art.tex("res://assets/gfx/menu/banner_%s.png" % name)
-		_banners.append([tex, x])
-		x += tex.get_width() + BANNER_SPACING
-	# banners_max = leveleditor_start - (640 - strip_width) + spacing
-	_banner_max = _banners[3][1] - (640 - (BANNER_MAXX - BANNER_MINX)) + BANNER_SPACING
+	for credit in BANNER_CREDITS:
+		var item := Control.new()
+		item.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var icon := Sprite2D.new()
+		icon.centered = false
+		icon.texture = BubbleArt.bubble(int(credit["bubble"]) - 1, false, true)
+		icon.position = Vector2(0, 2)
+		item.add_child(icon)
+		var role: String = credit["role"]
+		var names: String = credit["names"]
+		var label := UiText.funky("%s: %s" % [tr(role), names], BANNER_TEXT_SIZE)
+		label.position = Vector2(21, 0)
+		label.size = Vector2(600, BANNER_HEIGHT)
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		item.add_child(label)
+		var text_width: float = UiText.display_font().get_string_size(
+			label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, BANNER_TEXT_SIZE).x
+		var width := int(21 + text_width + 6)
+		_banner_clip.add_child(item)
+		_banners.append([item, x, width])
+		x += width + BANNER_SPACING
+	# banners_max = last_start - (640 - strip_width) + spacing, as in the original
+	_banner_max = _banners[_banners.size() - 1][1] - (640 - (BANNER_MAXX - BANNER_MINX)) + BANNER_SPACING
+	_move_banner()
 
 
 func _build_eyes() -> void:
@@ -263,7 +288,7 @@ func _physics_process(_delta: float) -> void:
 	banner_pos += 1
 	if banner_pos >= _banner_max:
 		banner_pos = 1
-	queue_redraw()
+	_move_banner()
 	_blink_eyes()
 	logo_index += 1
 	_logo.rotation = sin(logo_index / 40.0) / 20.0
@@ -299,19 +324,14 @@ func _animate_icons() -> void:
 			_broken[i] = int(20 + 10 * cos(randf() * TAU))
 
 
-func _draw() -> void:
-	var width := BANNER_MAXX - BANNER_MINX
+## Slide the credit labels through the strip; the clipping Control hides what leaves it.
+func _move_banner() -> void:
 	for b in _banners:
-		var tex: Texture2D = b[0]
+		var item: Control = b[0]
 		var xpos: int = b[1] - banner_pos
 		if xpos > _banner_max / 2:
 			xpos = b[1] - (banner_pos + _banner_max)
-		var w := tex.get_width()
-		var start := maxi(xpos, 0)
-		var end := mini(xpos + w, width)
-		if end > start:
-			var src := Rect2(start - xpos, 0, end - start, tex.get_height())
-			draw_texture_rect_region(tex, Rect2(BANNER_MINX + start, BANNER_Y, end - start, tex.get_height()), src)
+		item.position = Vector2(xpos, 0)
 
 
 func _blink_eyes() -> void:

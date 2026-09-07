@@ -19,6 +19,21 @@ msgstr "局域网游戏"
 msgid "Start Internet game"
 msgstr "网络游戏"
 
+msgid "Network play"
+msgstr "网络对战"
+
+msgid "Artwork"
+msgstr "美术"
+
+msgid "Soundtrack"
+msgstr "配乐"
+
+msgid "CPU control"
+msgstr "电脑操作"
+
+msgid "Godot port"
+msgstr "Godot 移植"
+
 msgid "Level editor"
 msgstr "关卡编辑器"
 

@@ -19,6 +19,21 @@ msgstr "Παιχνίδι τοπικού δικτύου"
 msgid "Start Internet game"
 msgstr "Παιχνίδι μέσω Internet"
 
+msgid "Network play"
+msgstr "Παιχνίδι δικτύου"
+
+msgid "Artwork"
+msgstr "Γραφικά"
+
+msgid "Soundtrack"
+msgstr "Μουσική"
+
+msgid "CPU control"
+msgstr "Παίκτης υπολογιστή"
+
+msgid "Godot port"
+msgstr "Έκδοση Godot"
+
 msgid "Level editor"
 msgstr "Επεξεργαστής επιπέδων"
 

@@ -19,6 +19,21 @@ msgstr "Joc în rețea locală"
 msgid "Start Internet game"
 msgstr "Joc pe Internet"
 
+msgid "Network play"
+msgstr "Joc în rețea"
+
+msgid "Artwork"
+msgstr "Grafică"
+
+msgid "Soundtrack"
+msgstr "Coloană sonoră"
+
+msgid "CPU control"
+msgstr "Jucător automat"
+
+msgid "Godot port"
+msgstr "Versiune Godot"
+
 msgid "Level editor"
 msgstr "Editor de niveluri"
 

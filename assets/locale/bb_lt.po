@@ -19,6 +19,21 @@ msgstr "Vietinio tinklo žaidimas"
 msgid "Start Internet game"
 msgstr "Interneto žaidimas"
 
+msgid "Network play"
+msgstr "Tinklo žaidimas"
+
+msgid "Artwork"
+msgstr "Grafika"
+
+msgid "Soundtrack"
+msgstr "Muzika"
+
+msgid "CPU control"
+msgstr "Kompiuterio žaidėjas"
+
+msgid "Godot port"
+msgstr "Godot versija"
+
 msgid "Level editor"
 msgstr "Lygių redaktorius"
 

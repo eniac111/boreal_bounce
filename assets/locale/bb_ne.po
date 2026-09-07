@@ -19,6 +19,21 @@ msgstr "स्थानीय नेटवर्क खेल"
 msgid "Start Internet game"
 msgstr "इन्टरनेट खेल"
 
+msgid "Network play"
+msgstr "नेटवर्क खेल"
+
+msgid "Artwork"
+msgstr "कलाकृति"
+
+msgid "Soundtrack"
+msgstr "संगीत"
+
+msgid "CPU control"
+msgstr "कम्प्युटर खेलाडी"
+
+msgid "Godot port"
+msgstr "Godot संस्करण"
+
 msgid "Level editor"
 msgstr "स्तर सम्पादक"
 

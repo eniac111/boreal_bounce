@@ -19,6 +19,21 @@ msgstr "Yerel ağ oyunu"
 msgid "Start Internet game"
 msgstr "İnternet oyunu"
 
+msgid "Network play"
+msgstr "Ağ oyunu"
+
+msgid "Artwork"
+msgstr "Grafik"
+
+msgid "Soundtrack"
+msgstr "Müzik"
+
+msgid "CPU control"
+msgstr "Bilgisayar oyuncusu"
+
+msgid "Godot port"
+msgstr "Godot sürümü"
+
 msgid "Level editor"
 msgstr "Seviye düzenleyici"
 

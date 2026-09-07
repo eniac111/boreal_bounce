@@ -19,6 +19,21 @@ msgstr "بازی در شبکه محلی"
 msgid "Start Internet game"
 msgstr "بازی اینترنتی"
 
+msgid "Network play"
+msgstr "بازی شبکه‌ای"
+
+msgid "Artwork"
+msgstr "گرافیک"
+
+msgid "Soundtrack"
+msgstr "موسیقی"
+
+msgid "CPU control"
+msgstr "بازیکن رایانه‌ای"
+
+msgid "Godot port"
+msgstr "نسخه Godot"
+
 msgid "Level editor"
 msgstr "ویرایشگر مرحله"
 

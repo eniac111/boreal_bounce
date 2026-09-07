@@ -19,6 +19,21 @@ msgstr "Igra v lokalnem omrežju"
 msgid "Start Internet game"
 msgstr "Internetna igra"
 
+msgid "Network play"
+msgstr "Omrežna igra"
+
+msgid "Artwork"
+msgstr "Grafika"
+
+msgid "Soundtrack"
+msgstr "Glasba"
+
+msgid "CPU control"
+msgstr "Računalniški igralec"
+
+msgid "Godot port"
+msgstr "Različica Godot"
+
 msgid "Level editor"
 msgstr "Urejevalnik stopenj"
 

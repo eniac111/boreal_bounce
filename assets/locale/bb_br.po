@@ -19,6 +19,21 @@ msgstr "Kregiñ c'hoari LAN"
 msgid "Start Internet game"
 msgstr "Kregiñ c'hoari Internet"
 
+msgid "Network play"
+msgstr "C'hoari rouedad"
+
+msgid "Artwork"
+msgstr "Arzoù"
+
+msgid "Soundtrack"
+msgstr "Sonerezh"
+
+msgid "CPU control"
+msgstr "C'hoarier urzhiataer"
+
+msgid "Godot port"
+msgstr "Treuzkas Godot"
+
 msgid "Level editor"
 msgstr "Aozer live"
 

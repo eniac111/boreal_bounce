@@ -291,11 +291,16 @@ Do not edit files under `assets/` by hand (except `fonts/*.ttf`); re-run the scr
 | data/plasma.raw | gfx/transitions/plasma.png | 8-bit ordering map for the plasma transition |
 | (generated) | gfx/transitions/{store_h,store_v,bars,squares,circle,noise}.png | transition threshold masks from CStuff.xs formulas |
 | gfx/menu/back_start.png | gfx/menu/back_start.png | baked "Version 2.213" painted out (rows 324-479 of the right strip) |
+| share/gfx/back_one_player.png | gfx/back_one_player.png | painted-in Frozen-Bubble logo at (448, 7, 637, 125) erased with its own mask and replaced by the Boreal Bounce tag |
+| share/gfx/backgrnd.png | gfx/backgrnd.png | painted-in Frozen-Bubble logo at (253, 401, 385, 480) erased with its own mask and replaced by the Boreal Bounce tag |
+| share/gfx/level_editor.png | gfx/level_editor.png | painted-in Frozen-Bubble logo at (23, 416, 117, 475) erased with its own mask and replaced by the Boreal Bounce tag |
+| share/gfx/back_netgame.png | gfx/back_netgame.png | baked "Network play..." lettering at (487, 453, 630, 474) replaced with the plank's own grain (the lobby draws it as text) |
 | gfx/menu/void_panel.png | gfx/menu/panel_clean.png | logo removed: interior replaced by procedural wood in the same colours |
 | gfx/menu/txt_1pgame_off.png | gfx/menu/plate_off.png | text removed: interior refilled from the text-free column |
 | gfx/menu/txt_1pgame_over.png | gfx/menu/plate_over.png | text removed: interior refilled from the text-free column |
 | (generated) | gfx/menu/board_result.png, board_small.png | procedural wooden boards behind translated result texts |
-| assets/gfx/**/*.png | gfx_hd/**/*.png.hd (285 files) | 3180 frames/stills via Real-ESRGAN realesrgan-x4plus-anime 4x resampled to 2x; 11 via 2x Lanczos (premultiplied alpha) |
+| (generated) | gfx/gen/logo.png | Boreal Bounce tag, the menu title |
+| assets/gfx/**/*.png | gfx_hd/**/*.png.hd (286 files) | 3180 frames/stills via Real-ESRGAN realesrgan-x4plus-anime 4x resampled to 2x; 12 via 2x Lanczos (premultiplied alpha) |
 | (generated) | gfx_hd/balls/bubble-N[-mini].smooth.png.hd | procedural 4x bubbles for the Smooth style |
 | gfx/font.png | fonts/bitmap/editor.fnt + editor.png | SFont -> BMFont, 58 glyphs |
 | gfx/font2.png | fonts/bitmap/editor_alt.fnt + editor_alt.png | SFont -> BMFont, 58 glyphs |

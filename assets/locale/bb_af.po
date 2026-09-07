@@ -19,6 +19,21 @@ msgstr "Begin LAN-spel"
 msgid "Start Internet game"
 msgstr "Begin internetspel"
 
+msgid "Network play"
+msgstr "Netwerkspel"
+
+msgid "Artwork"
+msgstr "Kunswerk"
+
+msgid "Soundtrack"
+msgstr "Klankbaan"
+
+msgid "CPU control"
+msgstr "Rekenaarspeler"
+
+msgid "Godot port"
+msgstr "Godot-omskakeling"
+
 msgid "Level editor"
 msgstr "Vlakredigeerder"
 

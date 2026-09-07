@@ -27,7 +27,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-from PIL import Image
+import numpy as np
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sfont_to_fnt import convert as convert_sfont  # noqa: E402
@@ -446,13 +447,22 @@ def import_hd(assets: Path, prov: list, warnings: list, ai: str = "auto", hd_sca
             sheet.save(out, format="PNG")
         else:
             im = Image.open(png).convert("RGBA")
-            ai_path = up.get(key) if up else None
+            if key == LOGO_IMAGE:  # render the tag again instead of enlarging it
+                render_logo(im.width, im.height, hd_scale).save(out, format="PNG")
+                n_lanczos += 1
+                continue
+            patch = LOGO_PATCHES.get(key)
+            ai_path = None if patch else (up.get(key) if up else None)
             if ai_path:
-                _resample(Image.open(ai_path).convert("RGBA"), (im.width * hd_scale, im.height * hd_scale)).save(out, format="PNG")
+                big = _resample(Image.open(ai_path).convert("RGBA"), (im.width * hd_scale, im.height * hd_scale))
                 n_ai += 1
             else:
-                upscale_rgba(im, HD_SCALE).save(out, format="PNG")
+                source = Image.open(patch["clean"]).convert("RGBA") if patch else im
+                big = upscale_rgba(source, HD_SCALE)
                 n_lanczos += 1
+            if patch:  # redraw instead of enlarging what was baked at 1x
+                draw_logo_patch(big, patch, big.width // im.width)
+            big.save(out, format="PNG")
     (dst_root / "manifest.json").write_text(json.dumps(sizes, separators=(",", ":")), encoding="utf-8")
     # The ".hd" extension keeps Godot's texture importer away from these files; they must be
     # added to the export include filter ("*.hd,*.json,*.lvl,*.bbr").
@@ -515,6 +525,346 @@ def remove_baked_version(assets: Path, prov: list, warnings: list):
     Image.fromarray(a.astype(np.uint8), "RGB").save(png)
     prov.append(("gfx/menu/back_start.png", "gfx/menu/back_start.png",
                  f'baked "Version 2.213" painted out (rows {top}-{bottom} of the right strip)'))
+
+
+WORDMARK_LINES = ("Boreal", "Bounce")
+WORDMARK_FILL = (255, 255, 255, 255)
+WORDMARK_OUTLINE = (214, 20, 120, 255)  # the pink of the original painted logo
+WORDMARK_SHADOW = (40, 0, 25, 110)
+# The Frozen-Bubble logo is painted into these three backgrounds. Each entry is the image and
+# the area to search for it; the exact rectangle comes from the logo's own pink outline.
+# The third field is what to draw behind the wordmark: the 2p logo is painted on a wooden sign
+# that goes away with it, so a board is rebuilt there; the other two sit on flat backgrounds.
+LOGO_SPOTS = (
+    ("back_one_player.png", (440, 0, 640, 170), None),
+    ("backgrnd.png", (200, 370, 470, 480), "wood"),
+    ("level_editor.png", (0, 350, 270, 480), None),
+)
+LOGO_PATCHES = {}  # gfx-relative path -> {"rect": (x0, y0, x1, y1), "clean": Path, "backing": str}
+
+
+LOGO_FONT = "fonts/display/PlaypenSans-Variable.ttf"
+LOGO_ART = "gfx/menu/fblogo.png"  # only read to locate and mask the copies painted into the art
+
+
+
+DARK = (52, 8, 34, 255)
+PINK = (222, 20, 120, 255)
+WHITE = (255, 255, 255, 255)
+LINES = ("Boreal", "Bounce")
+ANGLES = (-6.0, 4.0)
+WORK_SIZE = 110
+OVERLAP = 0.98  # how far the second word rides up into the first  # font size the tag is composed at before being scaled to its target
+
+
+def _tag_font(path, size):
+    f = ImageFont.truetype(str(path), size)
+    try:
+        f.set_variation_by_axes([800])
+    except Exception:
+        pass
+    return f
+
+
+def _word(path, text, size, angle, seed):
+    """One spray-painted word: white letters on a fat magenta body with a dark rim and runs."""
+    font = _tag_font(path, size)
+    rim = max(2, round(size * 0.26))
+    body = max(2, round(size * 0.21))
+    edge = max(1, round(size * 0.04))
+    rng = np.random.default_rng(seed)
+    runs = [(0.16 + 0.30 * i + 0.08 * rng.random(), size * (0.22 + 0.26 * rng.random()),
+             size * (0.085 + 0.03 * rng.random())) for i in range(3)]
+    drip = max(r[1] for r in runs)
+    box = font.getbbox(text, stroke_width=rim)
+    pad_x, pad_top = rim + 4, rim + 4
+    pad_bottom = rim + int(drip) + 4
+    im = Image.new("RGBA", (box[2] - box[0] + pad_x * 2, box[3] - box[1] + pad_top + pad_bottom), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    at = (pad_x - box[0], pad_top - box[1])
+    base_y = at[1] + (box[3] - box[1]) - rim
+    for frac, run, half in runs:  # paint runs, drawn first so the letters cover their tops
+        cx = at[0] + (box[2] - box[0]) * frac
+        for colour, grow in ((DARK, rim - body), (PINK, 0)):
+            d.rounded_rectangle([cx - half - grow, base_y - size * 0.25, cx + half + grow, base_y + run + grow],
+                                radius=half + grow, fill=colour)
+    d.text(at, text, font=font, fill=DARK, stroke_width=rim, stroke_fill=DARK)
+    d.text(at, text, font=font, fill=PINK, stroke_width=body, stroke_fill=PINK)
+    d.text(at, text, font=font, fill=WHITE, stroke_width=edge, stroke_fill=WHITE)
+    letters = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    ImageDraw.Draw(letters).text(at, text, font=font, fill=WHITE, stroke_width=edge, stroke_fill=WHITE)
+    grad = np.linspace(1.0, 0.82, im.height, dtype=np.float32)[:, None, None]
+    arr = np.asarray(letters).astype(np.float32)
+    arr[..., :3] *= grad
+    arr[..., 2] = np.minimum(arr[..., 2] + (1.0 - grad[..., 0]) * 55.0, 255.0)
+    im.alpha_composite(Image.fromarray(arr.astype(np.uint8), "RGBA"))
+    return im.rotate(angle, resample=Image.BICUBIC, expand=True)
+
+
+def render_tag(path, width: int, height: int, scale: int = 1) -> Image.Image:
+    """The fork's name as a spray-painted tag, fitted to width x height (times scale)."""
+    target = (max(1, int(width * scale)), max(1, int(height * scale)))
+    size = WORK_SIZE
+    words = [_word(path, t, size, a, i + 3) for i, (t, a) in enumerate(zip(LINES, ANGLES))]
+    overlap = round(size * OVERLAP)
+    w = max(x.width for x in words) + round(size * 0.30)
+    h = sum(x.height for x in words) - overlap
+    tag = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    y = 0
+    for i, im in enumerate(words):
+        shift = round(size * 0.15) * (1 if i else -1)
+        tag.alpha_composite(im, (max((w - im.width) // 2 + shift, 0), y))
+        y += im.height - overlap
+    canvas = Image.new("RGBA", (round(w * 1.04), round(h * 1.06)), (0, 0, 0, 0))
+    off = ((canvas.width - w) // 2, (canvas.height - h) // 2)
+    shadow = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    shadow.alpha_composite(tag, (off[0] + round(size * 0.05), off[1] + round(size * 0.05)))
+    sa = np.asarray(shadow).astype(np.float32)
+    sa[..., :3] = 0.0
+    sa[..., 3] *= 0.5
+    canvas.alpha_composite(Image.fromarray(sa.astype(np.uint8), "RGBA").filter(ImageFilter.GaussianBlur(size * 0.05)))
+    canvas.alpha_composite(tag, off)
+    # overspray: a soft magenta cloud plus speckles, so the tag sits on paint, not on the art
+    cloud = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    cloud.alpha_composite(tag, off)
+    ca = np.asarray(cloud)[..., 3].astype(np.uint8)
+    blur = np.asarray(Image.fromarray(ca, "L").filter(ImageFilter.GaussianBlur(size * 0.22))).astype(np.float32)
+    spray = np.zeros((canvas.height, canvas.width, 4), np.float32)
+    spray[..., 0], spray[..., 1], spray[..., 2] = PINK[0], PINK[1], PINK[2]
+    spray[..., 3] = np.clip(blur * 2.6, 0, 255) * 0.85
+    out = Image.fromarray(spray.astype(np.uint8), "RGBA")
+    rng = np.random.default_rng(9)
+    speck = ImageDraw.Draw(out)
+    ys, xs = np.nonzero(ca > 40)
+    if len(xs):
+        for _ in range(110):
+            i = int(rng.integers(0, len(xs)))
+            ang = rng.random() * 6.283
+            dist = size * (0.10 + 0.5 * rng.random())
+            x, y2 = int(xs[i] + np.cos(ang) * dist), int(ys[i] + np.sin(ang) * dist)
+            r = max(1, int(size * 0.011 * (0.5 + rng.random())))
+            if 0 <= x < canvas.width and 0 <= y2 < canvas.height and ca[y2, x] < 40:
+                speck.ellipse([x - r, y2 - r, x + r, y2 + r], fill=(PINK[0], PINK[1], PINK[2], int(110 + 90 * rng.random())))
+    out.alpha_composite(canvas)
+    ratio = min(target[0] / out.width, target[1] / out.height)
+    scaled = out.resize((max(1, round(out.width * ratio)), max(1, round(out.height * ratio))), Image.LANCZOS)
+    final = Image.new("RGBA", target, (0, 0, 0, 0))
+    final.alpha_composite(scaled, ((target[0] - scaled.width) // 2, (target[1] - scaled.height) // 2))
+    return final
+
+def render_logo(width: int, height: int, scale: int = 1) -> Image.Image:
+    font = ROOT_ASSETS / LOGO_FONT
+    if not font.exists():
+        return Image.new("RGBA", (max(1, int(width * scale)), max(1, int(height * scale))), (0, 0, 0, 0))
+    return render_tag(font, width, height, scale)
+
+
+def _inpaint(a, mask):
+    """Fill the masked pixels by diffusing the surrounding colours inwards, then relax the
+    result so the fill front does not show. Good enough under artwork that is drawn on top."""
+    import numpy as np
+    h, w, _ = a.shape
+    out = a.astype(np.float32).copy()
+    out[mask] = 0.0
+    known = (~mask).astype(np.float32)
+    while known.min() == 0.0:
+        pad_a = np.pad(out, ((1, 1), (1, 1), (0, 0)))
+        pad_k = np.pad(known, 1)
+        acc = np.zeros_like(out)
+        cnt = np.zeros((h, w), np.float32)
+        for dy in range(3):
+            for dx in range(3):
+                if dy == 1 and dx == 1:
+                    continue
+                acc += pad_a[dy:dy + h, dx:dx + w] * pad_k[dy:dy + h, dx:dx + w, None]
+                cnt += pad_k[dy:dy + h, dx:dx + w]
+        new = (cnt > 0) & (known == 0)
+        if not new.any():
+            break
+        out[new] = acc[new] / cnt[new][:, None]
+        known[new] = 1.0
+    for _ in range(40):
+        pad_a = np.pad(out, ((1, 1), (1, 1), (0, 0)), mode="edge")
+        blur = sum(pad_a[dy:dy + h, dx:dx + w] for dy in range(3) for dx in range(3)) / 9.0
+        out[mask] = blur[mask]
+    return out
+
+
+def draw_logo_patch(image: Image.Image, patch: dict, factor: int) -> None:
+    """Draw the replacement tag over one logo spot."""
+    x0, y0, x1, y1 = patch["rect"]
+    image.alpha_composite(render_logo(x1 - x0, y1 - y0, factor), (x0 * factor, y0 * factor))
+
+
+def _pink_bbox(a, region):
+    """Bounding box of the logo's magenta outline inside a search region."""
+    x0, y0, x1, y1 = region
+    sub = a[y0:y1, x0:x1]
+    red, green, blue = sub[..., 0], sub[..., 1], sub[..., 2]
+    pink = (red > 140) & (green < 115) & (blue > 110) & ((red - green) > 55)
+    if pink.sum() < 200:
+        return None
+    ys, xs = np.where(pink)
+    return int(xs.min()) + x0, int(ys.min()) + y0, int(xs.max()) + x0, int(ys.max()) + y0
+
+
+def _row_fill(a, mask):
+    """Fill a masked area by interpolating across each gap along its own row. The frosted
+    panels are banded horizontally, so this keeps the banding, where a diffused fill leaves a
+    pale blob and a row median borrows colour from the neighbouring panel."""
+    out = a.copy()
+    ys = np.flatnonzero(mask.any(axis=1))
+    for y in ys:
+        row = out[y]
+        flags = mask[y].astype(np.int8)
+        edges = np.flatnonzero(np.diff(np.concatenate(([0], flags, [0]))))
+        for x0, x1 in zip(edges[::2], edges[1::2]):
+            left = row[x0 - 1] if x0 > 0 else None
+            right = row[x1] if x1 < len(row) else None
+            if left is None and right is None:
+                continue
+            if left is None:
+                left = right
+            if right is None:
+                right = left
+            t = np.linspace(0.0, 1.0, x1 - x0 + 2, dtype=np.float32)[1:-1][:, None]
+            row[x0:x1] = left * (1.0 - t) + right * t
+    blur = np.asarray(Image.fromarray(np.clip(out + 0.5, 0, 255).astype(np.uint8), "RGB")
+                      .filter(ImageFilter.GaussianBlur(1.0))).astype(np.float32)
+    out[mask] = blur[mask]
+    return out
+
+
+def _wood_fill(a, mask):
+    """Fill a masked area with procedural wood grain toned to the wood around it."""
+    ys, xs = np.where(mask)
+    y0, y1, x0, x1 = int(ys.min()), int(ys.max()) + 1, int(xs.min()), int(xs.max()) + 1
+    h, w = y1 - y0, x1 - x0
+    grain = np.asarray(wood_board(w + 60, h + 60, seed=11).convert("RGB")).astype(np.float32)[30:30 + h, 30:30 + w]
+    ring = _dilate(mask, 5) & ~mask
+    ring[:y0, :] = False
+    ring[y1:, :] = False
+    ring[:, :x0] = False
+    ring[:, x1:] = False
+    # tone the grain to the wood around the hole only: the ring also touches snow and sky
+    wood_like = ring & (a[..., 0] > a[..., 2] + 15) & (a[..., 0] > 50)
+    sample = a[wood_like] if wood_like.sum() > 30 else (a[ring] if ring.any() else None)
+    if sample is not None:
+        flat = grain.reshape(-1, 3)
+        mean = flat.mean(axis=0)
+        grain = mean + (grain - mean) * 0.55  # the original plaque's grain is softer
+        grain *= np.clip(np.median(sample, axis=0) / np.maximum(mean, 1e-3), 0.2, 3.0)
+    out = a.copy()
+    region_mask = mask[y0:y1, x0:x1]
+    out[y0:y1, x0:x1][region_mask] = np.clip(grain[region_mask], 0, 255)
+    return out
+
+
+LOGO_IMAGE = "gen/logo.png"  # the title on the menu, rendered instead of drawn by hand
+LOGO_IMAGE_SIZE = (190, 119)  # the footprint the original logo occupied on the menu
+
+
+def import_logo(assets: Path, prov: list):
+    """Write the tag as a standalone image for the menu title. `import_hd` renders its own
+    copy at the high-resolution factor rather than enlarging this one."""
+    out = assets / "gfx" / LOGO_IMAGE
+    out.parent.mkdir(parents=True, exist_ok=True)
+    render_logo(*LOGO_IMAGE_SIZE).save(out, format="PNG")
+    prov.append(("(generated)", f"gfx/{LOGO_IMAGE}", "Boreal Bounce tag, the menu title"))
+
+
+def remove_baked_lettering(assets: Path, prov: list, warnings: list):
+    """Erase the "Network play..." lettering painted on the lobby background's bottom plank.
+    The lobby draws that title as translated text instead."""
+    name, region = "back_netgame.png", (440, 435, 640, 478)
+    png = assets / "gfx" / name
+    if not png.exists():
+        warnings.append(f"{name} not found; baked lettering not removed")
+        return
+    a = np.asarray(Image.open(png).convert("RGB")).astype(np.float32)
+    x0, y0, x1, y1 = region
+    sub = a[y0:y1, x0:x1]
+    light = sub.sum(axis=2) > np.percentile(sub.sum(axis=2), 92)
+    ys, xs = np.where(light)
+    if len(ys) < 50:
+        warnings.append(f"{name}: no lettering found on the bottom plank")
+        return
+    pad = 3
+    rect = (max(int(xs.min()) + x0 - pad, 0), max(int(ys.min()) + y0 - pad, 0),
+            min(int(xs.max()) + x0 + pad + 1, a.shape[1]), min(int(ys.max()) + y0 + pad + 1, a.shape[0]))
+    width = rect[2] - rect[0]
+    patched = a.copy()
+    if rect[0] - width >= 0:
+        # the plank's grain runs along the row, so its own wood to the left, mirrored, hides
+        # the lettering better than a diffused fill would
+        patched[rect[1]:rect[3], rect[0]:rect[2]] = a[rect[1]:rect[3], rect[0] - width:rect[0]][:, ::-1]
+        how = "replaced with the plank's own grain"
+    else:
+        mask = np.zeros(a.shape[:2], bool)
+        mask[rect[1]:rect[3], rect[0]:rect[2]] = True
+        patched = _inpaint(a, mask)
+        how = "diffused away"
+    Image.fromarray(np.clip(patched + 0.5, 0, 255).astype(np.uint8), "RGB").save(png, format="PNG")
+    prov.append((f"share/gfx/{name}", f"gfx/{name}",
+                 f'baked "Network play..." lettering at {rect} {how} (the lobby draws it as text)'))
+
+
+def remove_baked_logos(share: Path, assets: Path, prov: list, warnings: list):
+    """Replace the Frozen-Bubble logo painted into three backgrounds with the fork's tag.
+
+    The painted copies are the original `menu/fblogo.png` artwork, so its own alpha channel,
+    scaled to each copy, gives the exact footprint to erase: only those pixels are diffused
+    away, and the surrounding scene (the frosted panel, the wooden sign, the penguins) is left
+    untouched. The spray-painted "Boreal Bounce" tag is then drawn over the same footprint.
+    `import_hd` redraws the tag at the higher resolution instead of enlarging this one.
+    """
+    logo_path = share / LOGO_ART
+    if not logo_path.exists():
+        warnings.append("menu/fblogo.png missing; painted-in logos not replaced")
+        return
+    logo = Image.open(logo_path).convert("RGBA")
+    logo_box = _pink_bbox(np.asarray(logo)[..., :3].astype(int), (0, 0, logo.width, logo.height))
+    if logo_box is None:
+        warnings.append("menu/fblogo.png: outline not recognised; painted-in logos not replaced")
+        return
+    for name, region, fill in LOGO_SPOTS:
+        png = assets / "gfx" / name
+        if not png.exists():
+            warnings.append(f"{name} not found; painted-in logo not replaced")
+            continue
+        a = np.asarray(Image.open(png).convert("RGB")).astype(np.float32)
+        box = _pink_bbox(a.astype(int), region)
+        if box is None:
+            warnings.append(f"{name}: no painted logo found, left untouched")
+            continue
+        scale = (box[2] - box[0] + 1) / float(logo_box[2] - logo_box[0] + 1)
+        lw, lh = max(1, round(logo.width * scale)), max(1, round(logo.height * scale))
+        ox = box[0] - round(logo_box[0] * scale)
+        oy = box[1] - round(logo_box[1] * scale)
+        stamp = np.asarray(logo.resize((lw, lh), Image.LANCZOS))[..., 3] > 20
+        mask = np.zeros(a.shape[:2], bool)
+        sx0, sy0 = max(ox, 0), max(oy, 0)
+        sx1, sy1 = min(ox + lw, a.shape[1]), min(oy + lh, a.shape[0])
+        if sx1 <= sx0 or sy1 <= sy0:
+            warnings.append(f"{name}: painted logo lies outside the image, left untouched")
+            continue
+        mask[sy0:sy1, sx0:sx1] = stamp[sy0 - oy:sy1 - oy, sx0 - ox:sx1 - ox]
+        mask = _dilate(mask, 2)
+        if fill == "wood":  # the 2p logo covers a wooden sign; give the sign its grain back
+            filled = _wood_fill(a, mask)
+        else:
+            filled = _row_fill(a, mask)
+        clean = Image.fromarray(np.clip(filled + 0.5, 0, 255).astype(np.uint8), "RGB")
+        clean_path = CLEAN_CACHE / "logofree" / name
+        clean_path.parent.mkdir(parents=True, exist_ok=True)
+        clean.save(clean_path, format="PNG")
+        rect = (sx0, sy0, sx1, sy1)
+        LOGO_PATCHES[name] = {"rect": rect, "clean": clean_path}
+        out = clean.convert("RGBA")
+        draw_logo_patch(out, LOGO_PATCHES[name], 1)
+        out.convert("RGB").save(png, format="PNG")
+        prov.append((f"share/gfx/{name}", f"gfx/{name}",
+                     f"painted-in Frozen-Bubble logo at {rect} erased with its own mask and replaced by the Boreal Bounce tag"))
 
 
 BUBBLE_COLOURS = {1: (110, 95, 89), 2: (195, 195, 195), 3: (94, 98, 228), 4: (84, 235, 126),
@@ -692,9 +1042,12 @@ def main():
                  f"white matte removed from {clean_stats[1]} of {clean_stats[0]} images (antialiased silhouettes)"))
     import_transitions(ROOT_SHARE, ROOT_ASSETS, prov)
     remove_baked_version(ROOT_ASSETS, prov, warnings)
+    remove_baked_logos(ROOT_SHARE, ROOT_ASSETS, prov, warnings)
+    remove_baked_lettering(ROOT_ASSETS, prov, warnings)
     import_clean_panels(ROOT_SHARE, ROOT_ASSETS, prov)
     import_clean_plates(ROOT_SHARE, ROOT_ASSETS, prov)
     import_boards(ROOT_ASSETS, prov)
+    import_logo(ROOT_ASSETS, prov)
     import_hd(ROOT_ASSETS, prov, warnings, args.ai, args.hd_scale)
     import_smooth_bubbles(ROOT_ASSETS, prov)
     import_fonts(ROOT_SHARE, ROOT_ASSETS, prov)

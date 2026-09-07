@@ -19,6 +19,21 @@ msgstr "Lähiverkkopeli"
 msgid "Start Internet game"
 msgstr "Internet-peli"
 
+msgid "Network play"
+msgstr "Verkkopeli"
+
+msgid "Artwork"
+msgstr "Grafiikka"
+
+msgid "Soundtrack"
+msgstr "Musiikki"
+
+msgid "CPU control"
+msgstr "Tietokonepelaaja"
+
+msgid "Godot port"
+msgstr "Godot-versio"
+
 msgid "Level editor"
 msgstr "Kenttäeditori"
 

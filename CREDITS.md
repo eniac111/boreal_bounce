@@ -8,6 +8,11 @@ listed below. The name "Frozen-Bubble" and its logo are not used by this fork.
 
 Boreal Bounce is distributed under the same license (see `COPYING`).
 
+## Boreal Bounce
+
+- Blagovest Petrov, current developer of the fork: the Godot 4 rewrite, the asset pipeline
+  and the new text-based interface. https://petrovs.info, blagovest@petrovs.info
+
 ## Fonts
 
 - Playpen Sans (display font for Latin, Cyrillic and Greek), Mochiy Pop One (Japanese),

@@ -19,6 +19,21 @@ msgstr "區域網路遊戲"
 msgid "Start Internet game"
 msgstr "網路遊戲"
 
+msgid "Network play"
+msgstr "網路對戰"
+
+msgid "Artwork"
+msgstr "美術"
+
+msgid "Soundtrack"
+msgstr "配樂"
+
+msgid "CPU control"
+msgstr "電腦操作"
+
+msgid "Godot port"
+msgstr "Godot 移植"
+
 msgid "Level editor"
 msgstr "關卡編輯器"
 

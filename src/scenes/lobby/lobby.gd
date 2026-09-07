@@ -25,6 +25,15 @@ var _upnp_mapped := false
 
 func _ready() -> void:
 	$Background.texture = Art.tex("res://assets/gfx/back_netgame.png")
+	# the plank at the bottom right carried "Network play..." as part of the artwork
+	var plank := UiText.funky(tr("Network play") + "...", 15)
+	plank.position = Vector2(360, 452)
+	plank.size = Vector2(268, 22)
+	plank.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	plank.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	plank.clip_text = true
+	UiText.fit(plank, 262, 15)
+	add_child(plank)
 	for key in ["title", "status", "list", "players", "chat", "input", "hint"]:
 		var l := UiText.make("", 13)
 		l.autowrap_mode = TextServer.AUTOWRAP_OFF

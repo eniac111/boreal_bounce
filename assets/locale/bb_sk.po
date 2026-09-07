@@ -19,6 +19,21 @@ msgstr "Hra v miestnej sieti"
 msgid "Start Internet game"
 msgstr "Hra cez internet"
 
+msgid "Network play"
+msgstr "Hra po sieti"
+
+msgid "Artwork"
+msgstr "Grafika"
+
+msgid "Soundtrack"
+msgstr "Hudba"
+
+msgid "CPU control"
+msgstr "Počítačový hráč"
+
+msgid "Godot port"
+msgstr "Verzia pre Godot"
+
 msgid "Level editor"
 msgstr "Editor úrovní"
 

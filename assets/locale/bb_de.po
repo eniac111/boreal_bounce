@@ -19,6 +19,21 @@ msgstr "LAN-Spiel"
 msgid "Start Internet game"
 msgstr "Internet-Spiel"
 
+msgid "Network play"
+msgstr "Netzwerkspiel"
+
+msgid "Artwork"
+msgstr "Grafik"
+
+msgid "Soundtrack"
+msgstr "Musik"
+
+msgid "CPU control"
+msgstr "Computergegner"
+
+msgid "Godot port"
+msgstr "Godot-Portierung"
+
 msgid "Level editor"
 msgstr "Level-Editor"
 

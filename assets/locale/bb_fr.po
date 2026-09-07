@@ -19,6 +19,21 @@ msgstr "Partie en réseau local"
 msgid "Start Internet game"
 msgstr "Partie sur Internet"
 
+msgid "Network play"
+msgstr "Jeu en réseau"
+
+msgid "Artwork"
+msgstr "Graphismes"
+
+msgid "Soundtrack"
+msgstr "Musique"
+
+msgid "CPU control"
+msgstr "Joueur automatique"
+
+msgid "Godot port"
+msgstr "Portage Godot"
+
 msgid "Level editor"
 msgstr "Éditeur de niveaux"
 

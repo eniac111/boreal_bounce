@@ -19,6 +19,21 @@ msgstr "LAN対戦"
 msgid "Start Internet game"
 msgstr "インターネット対戦"
 
+msgid "Network play"
+msgstr "ネットワーク対戦"
+
+msgid "Artwork"
+msgstr "グラフィック"
+
+msgid "Soundtrack"
+msgstr "サウンドトラック"
+
+msgid "CPU control"
+msgstr "コンピュータ操作"
+
+msgid "Godot port"
+msgstr "Godot版"
+
 msgid "Level editor"
 msgstr "レベルエディタ"
 

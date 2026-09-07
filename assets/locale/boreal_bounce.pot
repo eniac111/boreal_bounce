@@ -19,6 +19,21 @@ msgstr ""
 msgid "Start Internet game"
 msgstr ""
 
+msgid "Network play"
+msgstr ""
+
+msgid "Artwork"
+msgstr ""
+
+msgid "Soundtrack"
+msgstr ""
+
+msgid "CPU control"
+msgstr ""
+
+msgid "Godot port"
+msgstr ""
+
 msgid "Level editor"
 msgstr ""
 
