@@ -461,6 +461,62 @@ def import_hd(assets: Path, prov: list, warnings: list, ai: str = "auto", hd_sca
                  f"{n_ai} frames/stills via Real-ESRGAN {model} 4x resampled to {hd_scale}x; {n_lanczos} via {HD_SCALE}x Lanczos (premultiplied alpha)"))
 
 
+def _dilate(mask, r: int):
+    import numpy as np
+    out = mask.copy()
+    h, w = mask.shape
+    pad = np.pad(mask, r)
+    for dy in range(2 * r + 1):
+        for dx in range(2 * r + 1):
+            out |= pad[dy:dy + h, dx:dx + w]
+    return out
+
+
+def remove_baked_version(assets: Path, prov: list, warnings: list):
+    """Paint out the "Version 2.213" lettering baked into the menu background.
+
+    It belongs to the original release, not to this fork, and it sits on the plain magenta
+    strip down the right edge, below the vine pattern, so the strip's own background colour
+    fills it seamlessly. The little iced tower at the top of the same strip is kept: only
+    lettering in the lower half is removed.
+    """
+    import numpy as np
+    png = assets / "gfx" / "menu" / "back_start.png"
+    if not png.exists():
+        warnings.append("menu background missing; baked version text not removed")
+        return
+    a = np.asarray(Image.open(png).convert("RGB")).astype(int)
+    h, w, _ = a.shape
+    magenta = (a[..., 0] > 90) & (a[..., 1] < 90) & (a[..., 2] < a[..., 0])
+    frac = magenta.mean(axis=0)
+    x0 = w
+    while x0 > 0 and frac[x0 - 1] >= 0.6:
+        x0 -= 1
+    if x0 >= w - 8:
+        warnings.append("menu background: right-hand strip not found, version text left in place")
+        return
+    strip = a[:, x0:]
+    light = (strip[..., 0] > 170) & (strip[..., 1] > 90) & (strip[..., 2] > 150)
+    rows = np.where(light.any(axis=1))[0]
+    rows = rows[rows > h // 2]
+    if rows.size == 0:
+        warnings.append("menu background: no version lettering found on the strip")
+        return
+    top, bottom = max(int(rows.min()) - 3, 0), min(int(rows.max()) + 3, h - 1)
+    colours, counts = np.unique(strip.reshape(-1, 3), axis=0, return_counts=True)
+    background = colours[counts.argmax()]
+    region = strip[top:bottom + 1]
+    off_bg = np.abs(region - background).sum(axis=2) > 12
+    other = int((off_bg & ~_dilate(light[top:bottom + 1], 3)).sum())
+    if other > 200:  # the vine pattern would be painted over as well
+        warnings.append(f"menu background: {other} patterned pixels sit behind the version text; left in place")
+        return
+    a[top:bottom + 1, x0:] = background
+    Image.fromarray(a.astype(np.uint8), "RGB").save(png)
+    prov.append(("gfx/menu/back_start.png", "gfx/menu/back_start.png",
+                 f'baked "Version 2.213" painted out (rows {top}-{bottom} of the right strip)'))
+
+
 BUBBLE_COLOURS = {1: (110, 95, 89), 2: (195, 195, 195), 3: (94, 98, 228), 4: (84, 235, 126),
                   5: (246, 224, 72), 6: (205, 82, 236), 7: (228, 90, 106), 8: (247, 143, 70)}
 
@@ -635,6 +691,7 @@ def main():
     prov.append(("share/gfx/**/*.png", "(applied in place)",
                  f"white matte removed from {clean_stats[1]} of {clean_stats[0]} images (antialiased silhouettes)"))
     import_transitions(ROOT_SHARE, ROOT_ASSETS, prov)
+    remove_baked_version(ROOT_ASSETS, prov, warnings)
     import_clean_panels(ROOT_SHARE, ROOT_ASSETS, prov)
     import_clean_plates(ROOT_SHARE, ROOT_ASSETS, prov)
     import_boards(ROOT_ASSETS, prov)

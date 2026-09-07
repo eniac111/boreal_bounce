@@ -290,6 +290,7 @@ Do not edit files under `assets/` by hand (except `fonts/*.ttf`); re-run the scr
 | share/gfx/**/*.png | (applied in place) | white matte removed from 2986 of 3186 images (antialiased silhouettes) |
 | data/plasma.raw | gfx/transitions/plasma.png | 8-bit ordering map for the plasma transition |
 | (generated) | gfx/transitions/{store_h,store_v,bars,squares,circle,noise}.png | transition threshold masks from CStuff.xs formulas |
+| gfx/menu/back_start.png | gfx/menu/back_start.png | baked "Version 2.213" painted out (rows 324-479 of the right strip) |
 | gfx/menu/void_panel.png | gfx/menu/panel_clean.png | logo removed: interior replaced by procedural wood in the same colours |
 | gfx/menu/txt_1pgame_off.png | gfx/menu/plate_off.png | text removed: interior refilled from the text-free column |
 | gfx/menu/txt_1pgame_over.png | gfx/menu/plate_over.png | text removed: interior refilled from the text-free column |
