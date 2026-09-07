@@ -37,6 +37,114 @@ SFONTS = {"font.png": "editor", "font2.png": "editor_alt", "font-hi.png": "edito
 FRAME_FPS = 50.0  # one animation frame per game frame (20 ms) in the original
 
 
+MATTE_WHITE = 255.0
+MATTE_MIN_LIFT = 10.0  # a rim pixel must be this much lighter than the shape to count as matte
+CLEAN_CACHE = None  # set in main(): un-matted copies of the share/ frames
+clean_stats = [0, 0]  # images seen, images changed
+
+
+def _neighbour_mean(rgb, mask):
+    """Mean colour of the masked pixels around each pixel (3x3, falling back to 5x5)."""
+    import numpy as np
+    h, w = mask.shape
+    m = mask.astype(np.float32)
+    best_acc = best_cnt = None
+    for r in (1, 2):
+        acc = np.zeros((h, w, 3), np.float32)
+        cnt = np.zeros((h, w), np.float32)
+        pr = np.pad(rgb, ((r, r), (r, r), (0, 0)))
+        pm = np.pad(m, r)
+        for dy in range(2 * r + 1):
+            for dx in range(2 * r + 1):
+                if dy == r and dx == r:
+                    continue
+                acc += pr[dy:dy + h, dx:dx + w] * pm[dy:dy + h, dx:dx + w, None]
+                cnt += pm[dy:dy + h, dx:dx + w]
+        if best_acc is None:
+            best_acc, best_cnt = acc, cnt
+        else:
+            fill = (best_cnt == 0) & (cnt > 0)
+            best_acc[fill] = acc[fill]
+            best_cnt[fill] = cnt[fill]
+    out = np.zeros((h, w, 3), np.float32)
+    ok = best_cnt > 0
+    out[ok] = best_acc[ok] / best_cnt[ok][:, None]
+    return out, ok
+
+
+def clean_matte(im: Image.Image) -> Image.Image:
+    """Undo the white matte baked into the original artwork.
+
+    The sprites were rendered against white and keyed with a coarse mask (their alpha only
+    takes the values 0, 128 and 255), which leaves light speckles along the silhouette and a
+    hard, aliased outline. For every pixel that is not fully inside the shape, the interior
+    colour F is estimated from its neighbours and the stored colour C is read as F composited
+    over white: C = a * F + (1 - a) * 255. The least-squares solution for the coverage a gives
+    a real antialiased alpha and drops the white rim. Pixels that are not lighter than their
+    neighbours (a deliberate white outline like hurry_*.png, or a fully opaque image) come out
+    unchanged, because then F is white too and the equation is degenerate.
+    """
+    import numpy as np
+    a = np.asarray(im.convert("RGBA")).astype(np.float32)
+    rgb, al = a[..., :3].copy(), a[..., 3].copy()
+    opaque = al >= 250
+    if not opaque.any():
+        return im
+    h, w = al.shape
+    # pad with the edge value so the image border is not mistaken for a silhouette edge
+    pad = np.pad(al, 1, mode="edge")
+    near_edge = np.zeros((h, w), bool)
+    for dy in (0, 1, 2):
+        for dx in (0, 1, 2):
+            if dy == 1 and dx == 1:
+                continue
+            near_edge |= pad[dy:dy + h, dx:dx + w] < 250
+    interior = opaque & ~near_edge
+    target = (al > 0) & ~interior  # the opaque rim plus the half-transparent fringe
+    if not interior.any() or not target.any():
+        return im
+    F, have = _neighbour_mean(rgb, interior)
+    sel = target & have
+    if not sel.any():
+        return im
+    C, Fs = rgb[sel], F[sel]
+    d = MATTE_WHITE - Fs
+    den = (d * d).sum(axis=1)
+    cov = np.clip(np.where(den > 1e-3, ((MATTE_WHITE - C) * d).sum(axis=1) / np.maximum(den, 1e-3), 1.0), 0.0, 1.0)
+    lifted = (C - Fs).min(axis=1) > MATTE_MIN_LIFT
+    al[sel] = np.minimum(al[sel], np.where(lifted, cov * 255.0, al[sel]))
+    rgb[sel] = np.where(lifted[:, None], Fs, C)
+    return Image.fromarray(np.clip(np.concatenate([rgb, al[..., None]], axis=2) + 0.5, 0, 255).astype(np.uint8), "RGBA")
+
+
+def clean_image_file(path: Path) -> bool:
+    """Un-matte an imported image in place. Returns True when it changed."""
+    import numpy as np
+    im = Image.open(path).convert("RGBA")
+    out = clean_matte(im)
+    clean_stats[0] += 1
+    if np.array_equal(np.asarray(im), np.asarray(out)):
+        return False
+    out.save(path, format="PNG")
+    clean_stats[1] += 1
+    return True
+
+
+def cleaned_source(src: Path) -> Path:
+    """Un-matted copy of a share/ frame under .cache/clean, or the original when unchanged."""
+    import numpy as np
+    im = Image.open(src).convert("RGBA")
+    out = clean_matte(im)
+    clean_stats[0] += 1
+    if np.array_equal(np.asarray(im), np.asarray(out)):
+        return src
+    dst = CLEAN_CACHE / src.relative_to(ROOT_SHARE)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    out.save(dst, format="PNG")
+    clean_stats[1] += 1
+    return dst
+
+
 def rm_dir(p: Path):
     """Remove generated files but keep Godot's *.import sidecars: without them the game cannot
     load the 1x textures until the editor (or `godot --import`) has run again."""
@@ -70,7 +178,10 @@ ROOT_ASSETS = None
 
 
 def src_rel(p: Path) -> Path:
-    return p.relative_to(ROOT_SHARE)
+    try:
+        return p.relative_to(ROOT_SHARE)
+    except ValueError:  # an un-matted copy in the clean cache: name the share/ original
+        return p.relative_to(CLEAN_CACHE)
 
 
 def dst_rel(p: Path) -> Path:
@@ -150,6 +261,7 @@ def import_gfx(share: Path, assets: Path, prov: list, warnings: list):
                 singles.extend(seq)
                 continue
             seq.sort(key=lambda p: int(SEQ_RE.match(p.name).group("idx")))
+            seq = [cleaned_source(f) for f in seq]  # drop the baked white matte before packing
             rel = d.relative_to(src_root)
             pack_sequence(seq, dst_root / rel / f"{base}.png", dst_root / rel / f"{base}.tres", prov, warnings)
         for f in singles:
@@ -157,9 +269,14 @@ def import_gfx(share: Path, assets: Path, prov: list, warnings: list):
             if f.name in SFONTS and d == src_root:
                 continue  # handled by import_fonts
             if f.suffix.lower() == ".gif":
-                gif_to_png(f, (dst_root / rel).with_suffix(".png"), prov)
+                out = (dst_root / rel).with_suffix(".png")
+                gif_to_png(f, out, prov)
+                clean_image_file(out)
             elif f.suffix.lower() in (".png", ".bmp"):
-                copy(f, dst_root / rel, prov)
+                out = dst_root / rel
+                copy(f, out, prov)
+                if f.suffix.lower() == ".png":
+                    clean_image_file(out)
             else:
                 warnings.append(f"skipped unknown gfx file {rel}")
 
@@ -511,8 +628,12 @@ def main():
         sys.exit(f"share dir not found: {ROOT_SHARE}")
     ROOT_ASSETS.mkdir(parents=True, exist_ok=True)
     prov, warnings = [], []
+    global CLEAN_CACHE
+    CLEAN_CACHE = here / ".cache" / "clean"
 
     import_gfx(ROOT_SHARE, ROOT_ASSETS, prov, warnings)
+    prov.append(("share/gfx/**/*.png", "(applied in place)",
+                 f"white matte removed from {clean_stats[1]} of {clean_stats[0]} images (antialiased silhouettes)"))
     import_transitions(ROOT_SHARE, ROOT_ASSETS, prov)
     import_clean_panels(ROOT_SHARE, ROOT_ASSETS, prov)
     import_clean_plates(ROOT_SHARE, ROOT_ASSETS, prov)
