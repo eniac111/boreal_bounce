@@ -3,12 +3,15 @@
 # It installs an already exported Linux build rather than running Godot itself, so build the
 # game first and then the bundle:
 #
-#   godot --headless --path . --export-release "Linux" dist/boreal_bounce.x86_64
+#   godot --headless --path . --export-release "Linux" dist/boreal_bounce
 #   flatpak-builder --force-clean --repo=repo build \
 #       packaging/flatpak/info.petrovs.BorealBounce.yml
 #   flatpak build-bundle repo boreal-bounce.flatpak info.petrovs.BorealBounce
 #
-# The release workflow does exactly that on a v1.2.3 tag.
+# The binary is taken from dist/boreal_bounce with no architecture suffix, so this one manifest
+# packages both the x86_64 and the aarch64 build; the workflow stages whichever it is building
+# (add --arch=aarch64 to both flatpak commands for an ARM bundle). The release workflow does
+# all of it when a release is published.
 app-id: info.petrovs.BorealBounce
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
@@ -25,13 +28,13 @@ modules:
   - name: boreal-bounce
     buildsystem: simple
     build-commands:
-      - install -Dm755 boreal_bounce.x86_64 /app/bin/boreal-bounce
+      - install -Dm755 boreal_bounce /app/bin/boreal-bounce
       - install -Dm644 info.petrovs.BorealBounce.desktop /app/share/applications/info.petrovs.BorealBounce.desktop
       - install -Dm644 info.petrovs.BorealBounce.metainfo.xml /app/share/metainfo/info.petrovs.BorealBounce.metainfo.xml
       - for s in 16 32 48 64 128 256; do install -Dm644 "icon-${s}x${s}.png" "/app/share/icons/hicolor/${s}x${s}/apps/info.petrovs.BorealBounce.png"; done
     sources:
       - type: file
-        path: ../../dist/boreal_bounce.x86_64
+        path: ../../dist/boreal_bounce
       - type: file
         path: info.petrovs.BorealBounce.desktop
       - type: file

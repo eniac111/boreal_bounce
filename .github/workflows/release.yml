@@ -61,7 +61,8 @@ jobs:
           path: release
       - uses: actions/download-artifact@v8
         with:
-          name: flatpak-bundle
+          pattern: flatpak-bundle-*
+          merge-multiple: true
           path: release
       - name: Checksums over everything that ships
         run: cd release && sha256sum * > SHA256SUMS

@@ -40,16 +40,32 @@ jobs:
         run: |
           mkdir -p dist/web
           godot --headless --path . --export-release "Linux" dist/boreal_bounce.x86_64
+          godot --headless --path . --export-release "Linux arm64" dist/boreal_bounce.arm64
+          godot --headless --path . --export-release "Linux arm32" dist/boreal_bounce.arm32
           godot --headless --path . --export-release "Linux dedicated server" dist/boreal_bounce_server.x86_64
+          godot --headless --path . --export-release "Linux dedicated server arm64" dist/boreal_bounce_server.arm64
           godot --headless --path . --export-release "Windows" dist/boreal_bounce.exe
           godot --headless --path . --export-release "Web" dist/web/index.html
+      - name: Every desktop export must be one self-contained file
+        run: |
+          for f in dist/boreal_bounce.x86_64 dist/boreal_bounce.arm64 dist/boreal_bounce.arm32 \
+                   dist/boreal_bounce_server.x86_64 dist/boreal_bounce_server.arm64 dist/boreal_bounce.exe; do
+            test -s "$f" || { echo "::error::$f is missing or empty"; exit 1; }
+            # a stray .pck means the preset lost binary_format/embed_pck and the build would
+            # break as soon as the binary is renamed or installed on its own (the Flatpak does both)
+            test ! -e "${f%.*}.pck" || { echo "::error::$f was exported with a separate .pck"; exit 1; }
+          done
       - name: Package the downloads
         run: |
           v="${{ inputs.version }}"
           mkdir -p release
           install -m644 COPYING CREDITS.md dist/
-          tar -C dist -czf "release/boreal-bounce-$v-linux-x86_64.tar.gz" boreal_bounce.x86_64 COPYING CREDITS.md
-          tar -C dist -czf "release/boreal-bounce-$v-dedicated-server-x86_64.tar.gz" boreal_bounce_server.x86_64 COPYING CREDITS.md
+          for arch in x86_64 arm64 arm32; do
+            tar -C dist -czf "release/boreal-bounce-$v-linux-$arch.tar.gz" "boreal_bounce.$arch" COPYING CREDITS.md
+          done
+          for arch in x86_64 arm64; do
+            tar -C dist -czf "release/boreal-bounce-$v-dedicated-server-$arch.tar.gz" "boreal_bounce_server.$arch" COPYING CREDITS.md
+          done
           (cd dist && zip -q "../release/boreal-bounce-$v-windows-x86_64.zip" boreal_bounce.exe COPYING CREDITS.md)
           (cd dist/web && zip -qr "../../release/boreal-bounce-$v-web.zip" .)
       - uses: actions/upload-artifact@v7
@@ -59,8 +75,13 @@ jobs:
           retention-days: ${{ inputs.retention-days }}
       - uses: actions/upload-artifact@v7
         with:
-          name: linux-export
+          name: linux-export-x86_64
           path: dist/boreal_bounce.x86_64
+          retention-days: ${{ inputs.retention-days }}
+      - uses: actions/upload-artifact@v7
+        with:
+          name: linux-export-aarch64
+          path: dist/boreal_bounce.arm64
           retention-days: ${{ inputs.retention-days }}
       - name: Hand the stamped metadata to the Flatpak job
         uses: actions/upload-artifact@v7
@@ -72,6 +93,10 @@ jobs:
   flatpak:
     needs: export
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x86_64, aarch64]
     container:
       image: bilelmoussaoui/flatpak-github-actions:freedesktop-24.08
       options: --privileged
@@ -79,24 +104,38 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: ${{ inputs.ref || github.sha }}
+      # that image is published for x86_64 only, so the ARM bundle is built under emulation
+      # inside the privileged container, the way the action documents it
+      - name: Install docker for the emulator setup
+        if: matrix.arch != 'x86_64'
+        run: dnf -y install docker
+      - name: Set up QEMU
+        if: matrix.arch != 'x86_64'
+        uses: docker/setup-qemu-action@v4
+        with:
+          platforms: arm64
       - uses: actions/download-artifact@v8
         with:
-          name: linux-export
+          name: linux-export-${{ matrix.arch }}
           path: dist
       - uses: actions/download-artifact@v8
         with:
           name: packaging-stamped
           path: packaging
-      - name: The exported binary must stay executable
-        run: chmod +x dist/boreal_bounce.x86_64
+      - name: Stage the build the manifest expects
+        run: |
+          for f in dist/boreal_bounce.*; do mv "$f" dist/boreal_bounce; done
+          chmod +x dist/boreal_bounce
       - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
-          bundle: boreal-bounce-${{ inputs.version }}-x86_64.flatpak
+          bundle: boreal-bounce-${{ inputs.version }}-${{ matrix.arch }}.flatpak
           manifest-path: packaging/flatpak/info.petrovs.BorealBounce.yml
-          cache-key: flatpak-builder-${{ github.sha }}
+          arch: ${{ matrix.arch }}
+          cache-key: flatpak-builder-${{ matrix.arch }}-${{ github.sha }}
+          upload-artifact: false
       - uses: actions/upload-artifact@v7
         with:
-          name: flatpak-bundle
-          path: boreal-bounce-${{ inputs.version }}-x86_64.flatpak
+          name: flatpak-bundle-${{ matrix.arch }}
+          path: boreal-bounce-${{ inputs.version }}-${{ matrix.arch }}.flatpak
           if-no-files-found: error
           retention-days: ${{ inputs.retention-days }}
