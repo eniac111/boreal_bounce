@@ -3,6 +3,8 @@
 A from-scratch Godot 4 reimplementation of the puzzle game Frozen-Bubble, reusing the
 original artwork, sounds, levels and translations. GPL-2, see `COPYING` and `CREDITS.md`.
 
+![The Boreal Bounce main menu](screenshots/menu.png)
+
 ## Installing
 
 Every release carries the same five downloads plus `SHA256SUMS`:
